@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       'Calculate your exact Training Day (+5%) & Rest Day (-20%) macros, GLP-1 anti-sarcopenia protein floor, Perimenopause targets & 12-week body fat trajectory.',
     images: ['/opengraph-image'],
   },
+  other: {
+    'fb:app_id': '966242223397117',
+  },
 };
 
 export default function RootLayout({
