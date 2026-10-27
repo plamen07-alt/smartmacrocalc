@@ -1,0 +1,40 @@
+# SmartMacroCalc.com — Technical SEO & AI Search Engine Directives
+# Facilitates full indexing for standard web crawlers and AI search agents (GEO & AEO)
+
+User-agent: *
+Allow: /
+
+# Generative Engine Optimization (GEO) & AI Retrieval Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Sitemaps & Machine-Readable AI Compendiums
+Sitemap: https://smartmacrocalc.com/sitemap.xml
+Host: https://smartmacrocalc.com

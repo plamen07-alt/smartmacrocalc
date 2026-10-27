@@ -1,0 +1,6 @@
+node_modules
+.next
+.agents
+.git
+*.log
+deploy-to-github-and-vercel.bat

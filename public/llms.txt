@@ -1,0 +1,66 @@
+# SmartMacroCalc.com
+
+> Clinical human bioenergetics, metabolic health, and nutritional macronutrient calculation platform. Engineered for body recomposition, GLP-1 lean tissue preservation, perimenopause hormonal transitions, time-restricted feeding, and electrolyte balance with hospital-grade indirect calorimetry precision.
+
+SmartMacroCalc.com operates 100% client-side in the user's browser, maintaining zero-server biometric privacy and strict thermodynamic consistency (4×Protein + 4×Carbohydrates + 9×Fat == Total Calories). Calculations are grounded in three validated Basal Metabolic Rate equations (Mifflin-St Jeor 1990, Katch-McArdle 1996, Cunningham 1980/1991) and peer-reviewed clinical literature indexed in the National Library of Medicine (PubMed / NCBI).
+
+## Interactive Calculators & Core Engines
+
+- [Body Recomposition & Calorie Cycling Calculator](https://smartmacrocalc.com/): Dynamic +5% training day surplus and −20% rest day deficit with 12-week body fat and lean mass trajectory projection.
+- [GLP-1 Muscle Preservation Calculator](https://smartmacrocalc.com/?tab=glp1): Anti-sarcopenia protocol for Semaglutide, Tirzepatide, and Liraglutide with 1.8–2.2g/kg LBM protein floors, soluble fiber, and gastric emptying pacing.
+- [Perimenopause Hormone Macro & TDEE Calculator](https://smartmacrocalc.com/?tab=perimenopause): Calibrated for women ages 38–55, addressing age-related anabolic resistance with a 35g+ leucine-rich breakfast anchor and cortisol-friendly carbohydrate timing.
+- [Visual Intermittent Fasting Timeline Calculator](https://smartmacrocalc.com/?tab=fasting): Interactive 24-hour circular feeding clock for 16:8, 18:6, 20:4, and OMAD protocols linked to a 12-week weight trajectory and 4-phase metabolic chronobiology.
+- [Creatine Saturation & Electrolyte Calculator](https://smartmacrocalc.com/?tab=electrolytes): Precision dosing for creatine monohydrate (5–6g maintenance, 0.3g/kg loading), sweat-adjusted sodium, potassium, magnesium, and hydration for sauna and low-carb regimens.
+- [Plant-Based Leucine Trigger & FFMI Calculator](https://smartmacrocalc.com/?tab=ffmi): Height-normalized Fat-Free Mass Index (Kouri et al.) paired with amino-acid yield comparisons to reach the 3.0g L-leucine muscle protein synthesis threshold.
+- [Reverse Dieting & Metabolic Recovery Planner](https://smartmacrocalc.com/?tab=reverse): Progressive +80 kcal/week step-up schedule to upregulate NEAT, leptin, and thyroid hormones post-hypocaloric dieting without fat overshoot.
+
+## Core Bioenergetic Equations & Mathematical Models
+
+- [Mifflin-St Jeor BMR Equation](https://smartmacrocalc.com/guides/mifflin-st-jeor-vs-katch-mcardle-vs-cunningham): BMR = 10×W(kg) + 6.25×H(cm) − 5×Age + s (+5 for males, −161 for females). Validated for general populations within ±10% of indirect calorimetry (PMID: 2305711).
+- [Katch-McArdle BMR Equation](https://smartmacrocalc.com/guides/mifflin-st-jeor-vs-katch-mcardle-vs-cunningham): BMR = 370 + 21.6 × LBM(kg). Removes adiposity bias for athletic and resistance-trained individuals with known body fat percentage.
+- [Cunningham BMR Equation](https://smartmacrocalc.com/guides/mifflin-st-jeor-vs-katch-mcardle-vs-cunningham): BMR = 500 + 22.0 × LBM(kg). Gold-standard resting energy expenditure for strength athletes and high-volume competitors (PMID: 6741850).
+- [Height-Normalized FFMI (Kouri et al.)](https://smartmacrocalc.com/guides/fat-free-mass-index-ffmi-natural-genetic-muscular-potential): Normalized FFMI = Raw FFMI + 6.1 × (1.80 − Height_m), establishing the drug-free natural physiological ceiling (PMID: 7496846).
+
+## Programmatic Preset Directory (64 Clinical Scenarios)
+
+Browse the 64 statically pre-rendered target scenarios across 8 high-intent clinical categories:
+- [Programmatic Presets Directory Hub](https://smartmacrocalc.com/presets): Complete index of all 64 target profiles with interactive biometric filters.
+- [Female Recomposition Presets (130–160 lb)](https://smartmacrocalc.com/presets#recomp): Calorie cycling profiles for active women.
+- [Male Recomposition Presets (165–230 lb)](https://smartmacrocalc.com/presets#recomp): Anabolic/lipolytic cycling for men.
+- [GLP-1 Muscle Guard Presets (140–240 lb)](https://smartmacrocalc.com/presets#glp1): Anti-sarcopenic high-protein plans for GLP-1 patients.
+- [Perimenopause & Menopause TDEE Presets (125–185 lb)](https://smartmacrocalc.com/presets#perimenopause): Neuroendocrine transition protocols for women 38–55.
+- [Intermittent Fasting 16:8 & OMAD Presets (135–230 lb)](https://smartmacrocalc.com/presets#fasting): Time-restricted feeding timelines and macro splits.
+- [Cutting & Fat Loss Presets (140–240 lb)](https://smartmacrocalc.com/presets#cutting): Accelerated fat loss while preserving skeletal muscle mass.
+- [Reverse Dieting Recovery Presets (120–200 lb)](https://smartmacrocalc.com/presets#reverse): Post-diet metabolic adaptation protocols.
+- [Plant-Based & Vegan Leucine Presets (125–220 lb)](https://smartmacrocalc.com/presets#vegan): Essential amino acid optimization for vegans.
+- [Electrolyte & Creatine Presets (140–240 lb)](https://smartmacrocalc.com/presets#electrolytes): Thermoregulation, sweat sodium replacement, and sauna hydration.
+
+## Peer-Reviewed Clinical Research Guides (12 Guides)
+
+- [Clinical Research Library Hub](https://smartmacrocalc.com/guides): Full index of peer-reviewed human bioenergetics research.
+- [BMR Equations Compared](https://smartmacrocalc.com/guides/mifflin-st-jeor-vs-katch-mcardle-vs-cunningham): Mifflin-St Jeor vs. Katch-McArdle vs. Cunningham clinical accuracy (PMID: 2305711, 6741850, 15883556).
+- [Preventing Sarcopenia on GLP-1 Agonists](https://smartmacrocalc.com/guides/glp1-semaglutide-tirzepatide-lean-muscle-preservation): Muscle loss prevention on Ozempic, Wegovy, and Zepbound (PMID: 33567185, 26817506).
+- [Calorie Cycling Bioenergetics](https://smartmacrocalc.com/guides/calorie-cycling-body-recomposition-science): AMPK vs. mTORC1 nutrient partitioning on training vs. rest days (PMID: 26817506, 29405780).
+- [Perimenopause Macro Strategy](https://smartmacrocalc.com/guides/perimenopause-insulin-sensitivity-protein-timing): Overcoming anabolic resistance and luteal insulin shifts in women 38–55 (PMID: 24092765, 36085402).
+- [Reverse Dieting & Metabolic Adaptation](https://smartmacrocalc.com/guides/reverse-dieting-metabolic-adaptation-recovery): Restoring suppressed TDEE after chronic caloric restriction (PMID: 24571926, 27136388).
+- [Plant-Based Leucine Threshold](https://smartmacrocalc.com/guides/plant-based-leucine-threshold-complete-amino-combinations): Combining pea, rice, and soy isolates for 3.0g leucine (PMID: 26224750, 30659590).
+- [Creatine Monohydrate Saturation](https://smartmacrocalc.com/guides/creatine-monohydrate-intracellular-hydration-atp): Intracellular water retention and phosphocreatine kinetics (PMID: 28615996, 12945830).
+- [Sauna & Keto Electrolyte Balance](https://smartmacrocalc.com/guides/sauna-keto-electrolyte-balance-sodium-potassium-magnesium): Quantifying sodium, potassium, and magnesium losses (PMID: 29141965, 28165863).
+- [Fat-Free Mass Index (FFMI) Explained](https://smartmacrocalc.com/guides/fat-free-mass-index-ffmi-natural-genetic-muscular-potential): Calculating natural muscular potential using Kouri et al. cohort (PMID: 7496846).
+- [Intermittent Fasting 16:8 vs. OMAD](https://smartmacrocalc.com/guides/intermittent-fasting-16-8-omad-muscle-retention): Time-restricted feeding lean mass preservation trials (PMID: 27737674, 33002478).
+- [Protein Distribution & Anabolic Ceiling](https://smartmacrocalc.com/guides/protein-distribution-per-meal-anabolic-ceiling-mTORC1): Debunking the 30g protein absorption ceiling with tracer studies (PMID: 29497353, 38118410).
+- [Visceral Adipose Tissue Mobilization](https://smartmacrocalc.com/guides/visceral-adipose-tissue-reduction-zone2-cardio-resistance): Rest-day deficits and Zone 2 oxidation for visceral fat (PMID: 21846575).
+
+## Machine-Readable AI Compendium & Endpoints
+
+- [Complete Mathematical & Clinical Compendium (llms-full.txt)](https://smartmacrocalc.com/llms-full.txt): Comprehensive plain-text reference containing all raw mathematical models, constants, tables, and preset datasets.
+- [XML Sitemap](https://smartmacrocalc.com/sitemap.xml): Full 84-route sitemap index for search and AI crawlers.
+- [Robots Directives](https://smartmacrocalc.com/robots.txt): Machine crawler access rules welcoming AI indexing agents.
+
+## Optional & Legal Compliance
+
+- [About SmartMacroCalc.com & Methodology](https://smartmacrocalc.com/legal/about): Editorial board and scientific review process.
+- [Privacy Policy](https://smartmacrocalc.com/legal/privacy): Client-side localStorage data architecture and CCPA/GDPR compliance.
+- [Terms of Service](https://smartmacrocalc.com/legal/terms): Acceptable use policy and embeddable iframe widget licensing.
+- [Medical & Clinical Nutrition Disclaimer](https://smartmacrocalc.com/legal/disclaimer): GLP-1 agonist and clinical nutrition legal notices.
+- [Contact Editorial Team](https://smartmacrocalc.com/legal/contact): Inquiries for clinical research citations and B2B coach partnerships.
