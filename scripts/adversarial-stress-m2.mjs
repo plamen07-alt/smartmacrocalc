@@ -463,7 +463,7 @@ if (fs.existsSync(presetsHtmlDir)) {
       const html = fs.readFileSync(htmlPath, 'utf-8');
 
       // 1. Canonical tag
-      const expectedCanonical = `https://smartmacrocalc.com/presets/${p.slug}`;
+      const expectedCanonical = `https://www.smartmacrocalc.com/presets/${p.slug}`;
       const hasCanonical = html.includes(`<link rel="canonical" href="${expectedCanonical}"/>`) ||
                            html.includes(`<link rel="canonical" href="${expectedCanonical}"`);
       assert(hasCanonical, `Preset '${p.slug}' has canonical link to ${expectedCanonical}`, 'htmlArtifactFailures');
@@ -492,7 +492,7 @@ if (fs.existsSync(presetsHtmlDir)) {
   assert(hubExists, 'Presets Directory Hub HTML artifact exists (.next/server/app/presets.html)', 'htmlArtifactFailures');
   if (hubExists) {
     const hubHtml = fs.readFileSync(hubHtmlPath, 'utf-8');
-    const hasHubCanonical = hubHtml.includes('https://smartmacrocalc.com/presets');
+    const hasHubCanonical = hubHtml.includes('https://www.smartmacrocalc.com/presets');
     assert(hasHubCanonical, 'Presets Directory Hub HTML has canonical link', 'htmlArtifactFailures');
 
     let linkedPresets = 0;

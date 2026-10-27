@@ -26,7 +26,7 @@ export function CoachWhiteLabelBar() {
     }
   }, []);
 
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://smartmacrocalc.com';
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.smartmacrocalc.com';
   const safeInputCoach = sanitizeBrandParam(inputCoach, 42) || 'Coach';
   const safeInputClinic = sanitizeBrandParam(inputClinic, 50) || 'Performance Clinic';
   const tabParam = selectedTab !== 'all' ? `&tab=${sanitizeTabParam(selectedTab)}` : '';

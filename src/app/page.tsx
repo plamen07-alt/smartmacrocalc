@@ -166,7 +166,7 @@ export default function HomePage() {
             How the 3-Formula Bioenergetics &amp; Nutrient Partitioning Engine Works
           </h2>
           <p className="mt-2 text-sm text-slate-600">
-            Reviewed by Exercise Physiologists &amp; Registered Sports Dietitians • Direct National Library of Medicine (PubMed / NCBI) References
+            Evidence-based algorithms verified against peer-reviewed sports nutrition literature • Direct National Library of Medicine (PubMed / NCBI) References
           </p>
         </div>
 

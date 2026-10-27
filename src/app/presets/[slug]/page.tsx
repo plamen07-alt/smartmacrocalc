@@ -30,7 +30,7 @@ export async function generateMetadata({
   if (!preset) {
     return { title: 'Preset Not Found | SmartMacroCalc.com' };
   }
-  const canonicalUrl = `https://smartmacrocalc.com/presets/${slug}`;
+  const canonicalUrl = `https://www.smartmacrocalc.com/presets/${slug}`;
   return {
     title: `${preset.title} | SmartMacroCalc.com`,
     description: preset.metaDescription,
@@ -94,19 +94,19 @@ export default async function PresetSeoPage({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://smartmacrocalc.com',
+        item: 'https://www.smartmacrocalc.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Presets Directory',
-        item: 'https://smartmacrocalc.com/presets',
+        item: 'https://www.smartmacrocalc.com/presets',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: preset.h1,
-        item: `https://smartmacrocalc.com/presets/${preset.slug}`,
+        item: `https://www.smartmacrocalc.com/presets/${preset.slug}`,
       },
     ],
   };
@@ -116,16 +116,16 @@ export default async function PresetSeoPage({
     '@type': 'MedicalWebPage',
     headline: preset.title,
     description: preset.metaDescription,
-    url: `https://smartmacrocalc.com/presets/${preset.slug}`,
+    url: `https://www.smartmacrocalc.com/presets/${preset.slug}`,
     aspect: 'DietaryGuidance',
     author: {
       '@type': 'Person',
-      name: 'Dr. Marcus Vance, PhD',
+      name: 'SmartMacroCalc Editorial Team',
       jobTitle: 'Exercise Physiologist',
     },
     reviewedBy: {
       '@type': 'Person',
-      name: 'Sarah Jenkins, MS, RD, CSSD',
+      name: 'SmartMacroCalc Editorial Team',
       jobTitle: 'Board-Certified Sports Dietitian',
     },
     citation: preset.pmidCitations.map((c) => c.url),
@@ -148,8 +148,8 @@ export default async function PresetSeoPage({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SmartMacroCalc.com',
-    url: 'https://smartmacrocalc.com',
-    logo: 'https://smartmacrocalc.com/icon.svg',
+    url: 'https://www.smartmacrocalc.com',
+    logo: 'https://www.smartmacrocalc.com/icon.svg',
   };
 
   return (

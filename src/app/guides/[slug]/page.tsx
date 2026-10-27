@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!article) {
     return { title: 'Guide Not Found | SmartMacroCalc.com' };
   }
-  const canonicalUrl = `https://smartmacrocalc.com/guides/${slug}`;
+  const canonicalUrl = `https://www.smartmacrocalc.com/guides/${slug}`;
   return {
     title: `${article.title} | SmartMacroCalc.com`,
     description: article.excerpt,
@@ -72,7 +72,7 @@ export default async function GuideArticlePage({
     notFound();
   }
 
-  const canonicalUrl = `https://smartmacrocalc.com/guides/${slug}`;
+  const canonicalUrl = `https://www.smartmacrocalc.com/guides/${slug}`;
 
   // Structured FAQ Data
   const articleFaqs = (article as any).faq ||
@@ -82,8 +82,8 @@ export default async function GuideArticlePage({
         answer: (article as any).directClinicalAnswer || article.excerpt,
       },
       {
-        question: `Who authored and medically reviewed this clinical research guide?`,
-        answer: `This guide was authored by ${article.author} (${article.authorCredentials}) and medically reviewed by ${article.reviewer}.`,
+        question: `Who compiled and verified this research guide?`,
+        answer: `This guide was synthesized by the SmartMacroCalc Editorial Team and verified against peer-reviewed nutritional physiology literature indexed in PubMed/NCBI.`,
       },
       {
         question: `Where can I verify the primary scientific citations for this guide?`,
@@ -101,18 +101,18 @@ export default async function GuideArticlePage({
     description: article.excerpt,
     aspect: 'DietaryGuidance',
     author: {
-      '@type': 'Person',
-      name: article.author,
-      jobTitle: article.authorCredentials,
+      '@type': 'Organization',
+      name: article.author || 'SmartMacroCalc Editorial Team',
+      url: 'https://www.smartmacrocalc.com/legal/about',
     },
     reviewedBy: {
-      '@type': 'Person',
-      name: article.reviewer,
+      '@type': 'Organization',
+      name: 'SmartMacroCalc Editorial Review',
     },
     publisher: {
       '@type': 'Organization',
       name: 'SmartMacroCalc.com',
-      url: 'https://smartmacrocalc.com',
+      url: 'https://www.smartmacrocalc.com',
     },
     citation: article.pmidCitations.map((c) => c.url || `https://pubmed.ncbi.nlm.nih.gov/${c.pmid}/`),
   };
@@ -127,13 +127,13 @@ export default async function GuideArticlePage({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://smartmacrocalc.com',
+        item: 'https://www.smartmacrocalc.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Clinical Research Library',
-        item: 'https://smartmacrocalc.com/guides',
+        item: 'https://www.smartmacrocalc.com/guides',
       },
       {
         '@type': 'ListItem',
@@ -163,10 +163,10 @@ export default async function GuideArticlePage({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://smartmacrocalc.com/#organization',
+    '@id': 'https://www.smartmacrocalc.com/#organization',
     name: 'SmartMacroCalc.com',
-    url: 'https://smartmacrocalc.com',
-    logo: 'https://smartmacrocalc.com/icon.svg',
+    url: 'https://www.smartmacrocalc.com',
+    logo: 'https://www.smartmacrocalc.com/icon.svg',
   };
 
   // Unified Multi-Entity Schema Graph
@@ -182,26 +182,10 @@ export default async function GuideArticlePage({
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-      {/* Schema.org Structured Data: Both Multi-Entity Graph & Individual Entity Scripts */}
+      {/* Schema.org Structured Data: Unified Graph */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalWebPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       <Link
@@ -225,16 +209,16 @@ export default async function GuideArticlePage({
           {article.title}
         </h1>
 
-        {/* E-E-A-T Author & Medical Reviewer Box */}
+        {/* E-E-A-T Editorial Synthesis Box */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs">
           <div>
-            <div className="font-bold text-slate-900">Author: {article.author}</div>
+            <div className="font-bold text-slate-900">Compiled by: {article.author}</div>
             <div className="text-slate-500">{article.authorCredentials}</div>
           </div>
           <div className="flex items-center gap-2 text-emerald-800">
             <ShieldCheck className="h-4 w-4 text-emerald-600" />
             <span>
-              Medically Reviewed by <strong>{article.reviewer}</strong>
+              Evidence Basis: <strong>{article.reviewer}</strong>
             </span>
           </div>
         </div>

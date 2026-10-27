@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Browse 64 pre-calculated clinical macro presets spanning 120 lb to 240 lb. Precision calorie cycling (+5%/-20%), GLP-1 protein floors, perimenopause, fasting, and electrolyte protocols.',
   alternates: {
-    canonical: 'https://smartmacrocalc.com/presets',
+    canonical: 'https://www.smartmacrocalc.com/presets',
   },
   openGraph: {
     title: 'Biometric Macro & Calorie Cycling Preset Directory | SmartMacroCalc.com',
     description:
       'Browse 64 pre-calculated clinical macro presets spanning 120 lb to 240 lb. Precision calorie cycling, GLP-1 protein floors, perimenopause, fasting, and electrolyte protocols.',
-    url: 'https://smartmacrocalc.com/presets',
+    url: 'https://www.smartmacrocalc.com/presets',
     type: 'website',
     siteName: 'SmartMacroCalc.com',
   },
@@ -37,13 +37,13 @@ export default function PresetsDirectoryPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://smartmacrocalc.com',
+        item: 'https://www.smartmacrocalc.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Presets Directory',
-        item: 'https://smartmacrocalc.com/presets',
+        item: 'https://www.smartmacrocalc.com/presets',
       },
     ],
   };
@@ -54,11 +54,11 @@ export default function PresetsDirectoryPage() {
     name: 'SmartMacroCalc Clinical Preset Profiles Directory',
     description:
       'Comprehensive index of 64 pre-calculated clinical nutrition and calorie cycling profiles across 8 clinical domains.',
-    url: 'https://smartmacrocalc.com/presets',
+    url: 'https://www.smartmacrocalc.com/presets',
     hasPart: SEO_PRESETS.map((p) => ({
       '@type': 'MedicalWebPage',
       name: p.title,
-      url: `https://smartmacrocalc.com/presets/${p.slug}`,
+      url: `https://www.smartmacrocalc.com/presets/${p.slug}`,
     })),
   };
 

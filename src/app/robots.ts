@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -11,12 +12,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: [
           'GPTBot',
+          'OAI-SearchBot',
           'ChatGPT-User',
           'PerplexityBot',
           'ClaudeBot',
           'Claude-Web',
           'Google-Extended',
           'Applebot-Extended',
+          'Bingbot',
           'cohere-ai',
           'Omgilibot',
           'Diffbot',
@@ -24,7 +27,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://smartmacrocalc.com/sitemap.xml',
-    host: 'https://smartmacrocalc.com',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

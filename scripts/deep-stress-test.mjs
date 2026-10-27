@@ -136,7 +136,7 @@ async function runDeepStressTest() {
     if (!ogDesc || ogDesc.length < 50) {
       metadataMismatches.push(`${slug}: og:description too short (${ogDesc})`);
     }
-    if (ogUrl !== `https://smartmacrocalc.com/presets/${slug}`) {
+    if (ogUrl !== `https://www.smartmacrocalc.com/presets/${slug}`) {
       metadataMismatches.push(`${slug}: og:url mismatch (${ogUrl})`);
     }
     if (twCard !== 'summary_large_image') {

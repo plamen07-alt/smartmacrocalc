@@ -276,7 +276,7 @@ async function runAdversarialAudit() {
     const canonicals = extractCanonicalLinks(html);
     assert(canonicals.length === 1, `Exactly 1 canonical link in ${file}`, `Found ${canonicals.length}`);
     const canonical = canonicals[0];
-    const expectedCanonical = `https://smartmacrocalc.com/presets/${slug}`;
+    const expectedCanonical = `https://www.smartmacrocalc.com/presets/${slug}`;
     assert(canonical === expectedCanonical, `Exact canonical URL match in ${file}`, `Expected ${expectedCanonical}, got ${canonical}`);
     if (canonical) {
       if (canonicalsSeen.has(canonical)) {
@@ -326,9 +326,9 @@ async function runAdversarialAudit() {
       const items = breadcrumbSchema.itemListElement || [];
       const validCrumbs =
         items[0]?.position === 1 &&
-        items[0]?.item === 'https://smartmacrocalc.com' &&
+        items[0]?.item === 'https://www.smartmacrocalc.com' &&
         items[1]?.position === 2 &&
-        items[1]?.item === 'https://smartmacrocalc.com/presets' &&
+        items[1]?.item === 'https://www.smartmacrocalc.com/presets' &&
         items[2]?.position === 3 &&
         items[2]?.item === expectedCanonical;
       assert(validCrumbs, `Breadcrumb hierarchy Home -> Presets -> [slug] correct in ${file}`, JSON.stringify(items));
@@ -404,7 +404,7 @@ async function runAdversarialAudit() {
   // Hub canonical
   const hubCanonicals = extractCanonicalLinks(hubHtml);
   assert(hubCanonicals.length === 1, 'Hub page has exactly 1 canonical link', `Found ${hubCanonicals.length}`);
-  assert(hubCanonicals[0] === 'https://smartmacrocalc.com/presets', 'Hub canonical is exactly https://smartmacrocalc.com/presets', hubCanonicals[0]);
+  assert(hubCanonicals[0] === 'https://www.smartmacrocalc.com/presets', 'Hub canonical is exactly https://www.smartmacrocalc.com/presets', hubCanonicals[0]);
 
   // Hub JSON-LD
   const hubJsonLd = extractJsonLdScripts(hubHtml);

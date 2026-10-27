@@ -44,12 +44,12 @@ export default function OpenGraphImage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '28px',
+                fontSize: '24px',
                 fontWeight: 900,
                 color: '#ffffff',
               }}
             >
-              ⚡
+              SMC
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -67,7 +67,7 @@ export default function OpenGraphImage() {
                     borderRadius: '6px',
                   }}
                 >
-                  CLINICAL LAB
+                  EVIDENCE-BASED
                 </span>
               </div>
               <span style={{ fontSize: '15px', color: '#94a3b8', marginTop: '2px' }}>
@@ -90,7 +90,7 @@ export default function OpenGraphImage() {
               gap: '8px',
             }}
           >
-            ✓ NCBI PubMed Validated • 100% Free
+            NCBI PubMed Cited • 100% Free
           </div>
         </div>
 

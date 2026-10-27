@@ -670,7 +670,7 @@ export function SocialBlueprintCard({
 | **Prebiotic Soluble Fiber** | **${glp.solubleFiberGrams}g / day** | Essential for mitigating GLP-1 induced gastric hypomotility and constipation |
 | **Electrolyte Hydration** | **${glp.hydrationLiters} Liters / day** | ${glp.hydrationOz} oz fluid replacement to support renal filtration and blood volume |
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 33567185, 35658024)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 33567185, 35658024)*`;
     } else if (activeTab === 'perimenopause') {
       const pProto = report.perimenopauseProtocol;
       const train = pProto?.trainingDayMacros || report.trainingDayMacros;
@@ -688,7 +688,7 @@ export function SocialBlueprintCard({
 | **Morning Leucine Anchor** | **35g+ Protein** | ~3.2g Leucine | - | - | - | Within 60m of waking to overcome estrogen-deficient anabolic resistance |
 | **Daily Estrogen Fiber Floor** | **${pProto?.estrogenSupportFiberGrams || 32}g** | - | - | - | 32g | Optimizes gut beta-glucuronidase and estrogen metabolite clearance |
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 24092765, 36085402)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 24092765, 36085402)*`;
     } else if (activeTab === 'fasting') {
       const fProto = report.fastingProtocol;
       const protoType = fProto?.protocol || fProto?.protocolType || '16:8';
@@ -707,7 +707,7 @@ export function SocialBlueprintCard({
 | **Eating Window** | **${eatH} Hours** | ${windowStr} | Nutrient assimilation, MPS stimulation (${fastMacros.proteinGrams}g protein divided into $\\ge 35g$ boluses) |
 | **Daily Macronutrients** | 7-Day Target | **${fastMacros.calories} kcal** | Protein: ${fastMacros.proteinGrams}g • Carbs: ${fastMacros.carbsGrams}g • Fat: ${fastMacros.fatGrams}g |
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 27737674, 33002478)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 27737674, 33002478)*`;
     } else if (activeTab === 'electrolytes') {
       const el = report.electrolyteResult;
       md = `### My Clinical Electrolyte & Creatine Loading Protocol (${displayWeight}, ${biometrics.isKetoOrLowCarb ? 'Ketogenic Diet' : 'Standard Carb'})
@@ -721,7 +721,7 @@ export function SocialBlueprintCard({
 | **Magnesium (Mg2+)** | **${el.magnesiumMg} mg** | Elemental magnesium (glycinate/malate) for ATP enzymatic cofactor & sleep support |
 | **Creatine Monohydrate** | **${el.creatineDailyGrams}g / day** | Maintenance saturation; 5-day optional loading dose: ${el.creatineLoadingGrams}g/day (4 x 5g) |
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 28615996, 29141965)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 28615996, 29141965)*`;
     } else if (activeTab === 'ffmi') {
       const ffmi = report.ffmiResult;
       md = `### My Normalized FFMI & Leucine Threshold Analysis (${displayWeight}, ${biometrics.bodyFatPct}% BF)
@@ -737,7 +737,7 @@ export function SocialBlueprintCard({
 | **70:30 Pea/Rice Blend** | 35g protein (150 kcal) | 8.6% Leucine density (optimal vegan blend) |
 | **Tofu / Tempeh** | 39g protein (340 kcal) | 7.7% Leucine density |
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 7496846, 26224750)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 7496846, 26224750)*`;
     } else if (activeTab === 'reverse') {
       const firstWeekCals = report.reverseDietSchedule[0]?.dailyCalories || report.selectedBmr;
       md = `### My Metabolic Recovery & Reverse Dieting Schedule (+80 kcal/week)
@@ -748,7 +748,7 @@ export function SocialBlueprintCard({
 | :--- | :--- | :--- | :--- | :--- | :--- |
 ${report.reverseDietSchedule.slice(0, 8).map((w) => `| Week ${w.week} | **${w.dailyCalories} kcal** | ${w.proteinGrams}g | ${w.carbsGrams}g | ${w.fatGrams}g | ${w.metabolicStatus} |`).join('\n')}
 
-*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 24571926)*`;
+*Calculated via the Clinical Health & Bioenergetics Engine at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 24571926)*`;
     } else {
       // Recomp
       md = `### My Body Recomposition & Calorie Cycling Breakdown (${displayWeight}, ${biometrics.bodyFatPct}% BF)
@@ -761,7 +761,7 @@ ${report.reverseDietSchedule.slice(0, 8).map((w) => `| Week ${w.week} | **${w.da
 | **Rest Days (${biometrics.restDayDeficitPct}%)** | ${7 - biometrics.trainingDaysPerWeek} days/wk | **${report.restDayMacros.calories} kcal** | ${report.restDayMacros.proteinGrams}g | ${report.restDayMacros.carbsGrams}g | ${report.restDayMacros.fatGrams}g | ${report.restDayMacros.fiberGrams}g |
 | **7-Day Weekly Avg** | 7 days | **${report.weeklyAverageMacros.calories} kcal** | ${report.weeklyAverageMacros.proteinGrams}g | ${report.weeklyAverageMacros.carbsGrams}g | ${report.weeklyAverageMacros.fatGrams}g | ${report.weeklyAverageMacros.fiberGrams}g |
 
-*Calculated via the 3-Formula Clinical Engine (Mifflin-St Jeor / Katch-McArdle / Cunningham) at [SmartMacroCalc.com](https://smartmacrocalc.com) (PMID: 26817506, 29405780)*`;
+*Calculated via the 3-Formula Clinical Engine (Mifflin-St Jeor / Katch-McArdle / Cunningham) at [SmartMacroCalc.com](https://www.smartmacrocalc.com) (PMID: 26817506, 29405780)*`;
     }
 
     navigator.clipboard.writeText(md);

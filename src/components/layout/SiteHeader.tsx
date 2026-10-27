@@ -18,7 +18,7 @@ export function SiteHeader() {
                 Smart<span className="text-teal-600">MacroCalc</span>.com
               </span>
               <span className="hidden rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700 ring-1 ring-teal-600/20 sm:inline-block">
-                CLINICAL LAB
+                EVIDENCE-BASED
               </span>
             </div>
             <p className="text-[11px] font-medium text-slate-500">
@@ -44,7 +44,10 @@ export function SiteHeader() {
           </Link>
           <Link href="/legal/about" className="flex items-center gap-1 transition hover:text-teal-600">
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-            About &amp; Editorial
+            About
+          </Link>
+          <Link href="/legal/contact" className="transition hover:text-teal-600">
+            Contact
           </Link>
         </nav>
 

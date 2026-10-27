@@ -16,19 +16,19 @@ const LEGAL_PAGES: Record<
   about: {
     title: 'About SmartMacroCalc.com & Our Scientific Methodology',
     subtitle:
-      'Mission, Clinical Review Board, and Mathematical Transparency (Google E-E-A-T Standards)',
+      'Mission, Editorial Standards, and Mathematical Transparency (Evidence-Based Architecture)',
     sections: [
       {
-        heading: '1. Our Mission: Engineering Clinical Precision into Consumer Nutrition',
+        heading: '1. Our Mission: Evidence-Based Computational Nutrition',
         paragraphs: [
-          'SmartMacroCalc.com was founded to bridge the gap between hospital-grade indirect calorimetry research and everyday nutritional planning. Most online calorie calculators rely on a single outdated equation and fail to account for Lean Body Mass (LBM), GLP-1 medication protocols, or training-day nutrient partitioning.',
-          'Our platform runs 100% client-side in your browser, combining three peer-reviewed Basal Metabolic Rate equations (Mifflin-St Jeor, Katch-McArdle, and Cunningham) with dynamic macro cycling.',
+          'SmartMacroCalc.com is an independent health engineering project designed to translate peer-reviewed indirect calorimetry research into intuitive, privacy-first consumer nutrition tools. Most online calorie calculators rely on a single scale-weight equation and fail to account for Lean Body Mass (LBM), GLP-1 peptide therapy lean-mass preservation, or training-day nutrient partitioning.',
+          'Our platform runs 100% client-side in your browser, combining three gold-standard Basal Metabolic Rate equations (Mifflin-St Jeor, Katch-McArdle, and Cunningham) with dynamic macro cycling.',
         ],
       },
       {
-        heading: '2. Editorial & Scientific Review Process',
+        heading: '2. Editorial Standards & Literature Citations',
         paragraphs: [
-          'Every mathematical model on SmartMacroCalc.com is benchmarked against primary literature indexed in the National Library of Medicine (PubMed / NCBI), including the American Journal of Clinical Nutrition (PMID: 2305711, PMID: 26817506) and the New England Journal of Medicine (PMID: 33567185).',
+          'Every mathematical model on SmartMacroCalc.com is benchmarked against primary literature indexed in the National Library of Medicine (PubMed / NCBI), including the American Journal of Clinical Nutrition (PMID: 2305711, PMID: 26817506) and the New England Journal of Medicine (PMID: 33567185). Content is curated by the SmartMacroCalc Editorial Team with full citation transparency.',
         ],
       },
     ],
@@ -123,7 +123,7 @@ export async function generateMetadata({
   if (!page) {
     return { title: 'Legal | SmartMacroCalc.com' };
   }
-  const canonicalUrl = `https://smartmacrocalc.com/legal/${slug}`;
+  const canonicalUrl = `https://www.smartmacrocalc.com/legal/${slug}`;
   return {
     title: `${page.title} | SmartMacroCalc.com`,
     description: page.subtitle,
@@ -156,7 +156,7 @@ export default async function LegalPage({
     notFound();
   }
 
-  const canonicalUrl = `https://smartmacrocalc.com/legal/${slug}`;
+  const canonicalUrl = `https://www.smartmacrocalc.com/legal/${slug}`;
   const pageType = slug === 'about' ? 'AboutPage' : slug === 'contact' ? 'ContactPage' : 'WebPage';
 
   // Schema Entity 1: WebPage / AboutPage / ContactPage
@@ -170,13 +170,13 @@ export default async function LegalPage({
     description: page.subtitle,
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://smartmacrocalc.com/#website',
+      '@id': 'https://www.smartmacrocalc.com/#website',
       name: 'SmartMacroCalc.com',
-      url: 'https://smartmacrocalc.com',
+      url: 'https://www.smartmacrocalc.com',
     },
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://smartmacrocalc.com/#organization',
+      '@id': 'https://www.smartmacrocalc.com/#organization',
       name: 'SmartMacroCalc.com',
     },
   };
@@ -191,13 +191,13 @@ export default async function LegalPage({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://smartmacrocalc.com',
+        item: 'https://www.smartmacrocalc.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Legal & Compliance',
-        item: 'https://smartmacrocalc.com/legal/about',
+        item: 'https://www.smartmacrocalc.com/legal/about',
       },
       {
         '@type': 'ListItem',
@@ -212,10 +212,10 @@ export default async function LegalPage({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://smartmacrocalc.com/#organization',
+    '@id': 'https://www.smartmacrocalc.com/#organization',
     name: 'SmartMacroCalc.com',
-    url: 'https://smartmacrocalc.com',
-    logo: 'https://smartmacrocalc.com/icon.svg',
+    url: 'https://www.smartmacrocalc.com',
+    logo: 'https://www.smartmacrocalc.com/icon.svg',
     description:
       'Clinical Health & Nutrition Calculator Platform engineering hospital-grade indirect calorimetry equations into client-side tools.',
     contactPoint: {
@@ -233,22 +233,10 @@ export default async function LegalPage({
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-      {/* Schema.org Structured Data: Both Multi-Entity Graph & Individual Entity Scripts */}
+      {/* Schema.org Structured Data: Unified Graph */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       {/* Breadcrumb Navigation Bar */}

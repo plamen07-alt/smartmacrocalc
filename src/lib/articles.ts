@@ -26,9 +26,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Metabolic Physiology',
     readTime: '7 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '2305711',
@@ -140,9 +140,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'GLP-1 Clinical Nutrition',
     readTime: '9 min read',
     publishedDate: 'October 2026',
-    author: 'Sarah Jenkins, MS, RD, CSSD',
-    authorCredentials: 'Board-Certified Specialist in Sports Dietetics',
-    reviewer: 'Dr. Marcus Vance, PhD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '33567185',
@@ -238,9 +238,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Body Recomposition',
     readTime: '8 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '26817506',
@@ -371,9 +371,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Female Endocrinology',
     readTime: '8 min read',
     publishedDate: 'October 2026',
-    author: 'Sarah Jenkins, MS, RD, CSSD',
-    authorCredentials: 'Board-Certified Specialist in Sports Dietetics',
-    reviewer: 'Dr. Marcus Vance, PhD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '24092765',
@@ -448,9 +448,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Metabolic Recovery',
     readTime: '7 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '24571926',
@@ -597,9 +597,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Plant-Based Sports Nutrition',
     readTime: '8 min read',
     publishedDate: 'October 2026',
-    author: 'Sarah Jenkins, MS, RD, CSSD',
-    authorCredentials: 'Board-Certified Specialist in Sports Dietetics',
-    reviewer: 'Dr. Marcus Vance, PhD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '26224750',
@@ -676,9 +676,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Ergogenic Aids & Hydration',
     readTime: '6 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '28615996',
@@ -825,9 +825,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Electrolytes & Thermoregulation',
     readTime: '7 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '29141965',
@@ -974,9 +974,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Body Composition Metrics',
     readTime: '6 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '7496846',
@@ -1046,9 +1046,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Intermittent Fasting',
     readTime: '7 min read',
     publishedDate: 'October 2026',
-    author: 'Sarah Jenkins, MS, RD, CSSD',
-    authorCredentials: 'Board-Certified Specialist in Sports Dietetics',
-    reviewer: 'Dr. Marcus Vance, PhD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '27737674',
@@ -1194,9 +1194,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Muscle Protein Synthesis',
     readTime: '7 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '29497353',
@@ -1343,9 +1343,9 @@ export const SCIENTIFIC_ARTICLES: ScientificArticle[] = [
     category: 'Cardiometabolic Health',
     readTime: '6 min read',
     publishedDate: 'October 2026',
-    author: 'Dr. Marcus Vance, PhD',
-    authorCredentials: 'Exercise Physiology & Human Bioenergetics',
-    reviewer: 'Sarah Jenkins, MS, RD, CSSD',
+    author: 'SmartMacroCalc Editorial Team',
+    authorCredentials: 'Evidence synthesis from peer-reviewed literature',
+    reviewer: 'Citation check against PubMed / NCBI',
     pmidCitations: [
       {
         pmid: '21846575',

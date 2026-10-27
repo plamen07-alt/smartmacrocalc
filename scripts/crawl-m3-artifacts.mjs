@@ -153,7 +153,7 @@ async function crawlGuides() {
     assert('guides', size > 1500, `Guide [${slug}]: File size is substantive (>1.5 KB)`, `${size} bytes`);
 
     // 1. Canonical URL
-    const expectedCanonical = `https://smartmacrocalc.com/guides/${slug}`;
+    const expectedCanonical = `https://www.smartmacrocalc.com/guides/${slug}`;
     const canonicalMatch = html.match(/<link\s+rel=["']canonical["']\s+href=["'](.*?)["']/i) ||
                            html.match(/<link\s+href=["'](.*?)["']\s+rel=["']canonical["']/i);
     const actualCanonical = canonicalMatch ? canonicalMatch[1] : null;
@@ -248,7 +248,7 @@ async function crawlLegal() {
     assert('legal', size > 1000, `Legal [${slug}]: File size is substantive (>1 KB)`, `${size} bytes`);
 
     // 1. Canonical URL
-    const expectedCanonical = `https://smartmacrocalc.com/legal/${slug}`;
+    const expectedCanonical = `https://www.smartmacrocalc.com/legal/${slug}`;
     const canonicalMatch = html.match(/<link\s+rel=["']canonical["']\s+href=["'](.*?)["']/i) ||
                            html.match(/<link\s+href=["'](.*?)["']\s+rel=["']canonical["']/i);
     const actualCanonical = canonicalMatch ? canonicalMatch[1] : null;
@@ -343,16 +343,16 @@ async function auditMachineFiles() {
     const uniqueUrls = new Set(urls);
     assert('machineFiles', uniqueUrls.size === urls.length, 'public/sitemap.xml has zero duplicate URLs (100% unique)', `${uniqueUrls.size}/${urls.length}`);
 
-    const allHttps = urls.every((u) => u.startsWith('https://smartmacrocalc.com'));
-    assert('machineFiles', allHttps, 'public/sitemap.xml: 100% of URLs use canonical https://smartmacrocalc.com prefix');
+    const allHttps = urls.every((u) => u.startsWith('https://www.smartmacrocalc.com'));
+    assert('machineFiles', allHttps, 'public/sitemap.xml: 100% of URLs use canonical https://www.smartmacrocalc.com prefix');
 
     // Categorical breakdown
-    const homeCount = urls.filter((u) => u === 'https://smartmacrocalc.com').length;
-    const presetsHubCount = urls.filter((u) => u === 'https://smartmacrocalc.com/presets').length;
-    const presetsCount = urls.filter((u) => u.startsWith('https://smartmacrocalc.com/presets/')).length;
-    const guidesHubCount = urls.filter((u) => u === 'https://smartmacrocalc.com/guides').length;
-    const guidesCount = urls.filter((u) => u.startsWith('https://smartmacrocalc.com/guides/')).length;
-    const legalCount = urls.filter((u) => u.startsWith('https://smartmacrocalc.com/legal/')).length;
+    const homeCount = urls.filter((u) => u === 'https://www.smartmacrocalc.com').length;
+    const presetsHubCount = urls.filter((u) => u === 'https://www.smartmacrocalc.com/presets').length;
+    const presetsCount = urls.filter((u) => u.startsWith('https://www.smartmacrocalc.com/presets/')).length;
+    const guidesHubCount = urls.filter((u) => u === 'https://www.smartmacrocalc.com/guides').length;
+    const guidesCount = urls.filter((u) => u.startsWith('https://www.smartmacrocalc.com/guides/')).length;
+    const legalCount = urls.filter((u) => u.startsWith('https://www.smartmacrocalc.com/legal/')).length;
 
     assert('machineFiles', homeCount === 1, 'sitemap.xml contains root home URL (1)', `Count: ${homeCount}`);
     assert('machineFiles', presetsHubCount === 1, 'sitemap.xml contains presets hub URL (1)', `Count: ${presetsHubCount}`);
@@ -369,7 +369,7 @@ async function auditMachineFiles() {
 
   if (hasRobots) {
     const robots = fs.readFileSync(robotsTxtPath, 'utf8');
-    assert('machineFiles', robots.includes('Sitemap: https://smartmacrocalc.com/sitemap.xml'), 'public/robots.txt references canonical sitemap.xml');
+    assert('machineFiles', robots.includes('Sitemap: https://www.smartmacrocalc.com/sitemap.xml'), 'public/robots.txt references canonical sitemap.xml');
 
     const expectedBots = [
       'GPTBot',
@@ -423,7 +423,7 @@ async function auditRouteHandlers() {
 
       const robotsResult = await robotsFn();
       assert('routeHandlers', typeof robotsResult === 'object' && robotsResult !== null, 'robots() returns config object');
-      assert('routeHandlers', robotsResult.sitemap === 'https://smartmacrocalc.com/sitemap.xml', 'robots().sitemap matches canonical sitemap.xml');
+      assert('routeHandlers', robotsResult.sitemap === 'https://www.smartmacrocalc.com/sitemap.xml', 'robots().sitemap matches canonical sitemap.xml');
       assert('routeHandlers', Array.isArray(robotsResult.rules) || typeof robotsResult.rules === 'object', 'robots().rules is defined');
     } catch (err) {
       assert('routeHandlers', false, 'Execute robots() route handler', err.message);

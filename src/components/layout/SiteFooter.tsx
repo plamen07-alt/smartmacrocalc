@@ -119,7 +119,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/legal/contact" className="transition hover:text-teal-400">
-                  Contact Clinical Editorial Team
+                  Contact Editorial Team
                 </Link>
               </li>
               <li>

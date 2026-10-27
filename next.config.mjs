@@ -41,6 +41,45 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/privacy-policy',
+        destination: '/legal/privacy',
+        permanent: true,
+      },
+      {
+        source: '/privacy',
+        destination: '/legal/privacy',
+        permanent: true,
+      },
+      {
+        source: '/terms-of-service',
+        destination: '/legal/terms',
+        permanent: true,
+      },
+      {
+        source: '/terms',
+        destination: '/legal/terms',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/legal/contact',
+        permanent: true,
+      },
+      {
+        source: '/disclaimer',
+        destination: '/legal/disclaimer',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/legal/about',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

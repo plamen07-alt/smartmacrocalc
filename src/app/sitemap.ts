@@ -1,13 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { SEO_PRESETS } from '@/lib/presets';
 import { SCIENTIFIC_ARTICLES } from '@/lib/articles';
+import { SITE_URL, CONTENT_LAST_UPDATED } from '@/lib/site';
 
-const BASE_URL = 'https://smartmacrocalc.com';
+const BASE_URL = SITE_URL;
 
 const LEGAL_PAGES = ['about', 'privacy', 'terms', 'disclaimer', 'contact'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  // Fixed content-review date (not the build time) so Google receives an honest freshness signal.
+  const lastModified = new Date(CONTENT_LAST_UPDATED);
 
   // 1. Core Hub Page
   const homeRoute: MetadataRoute.Sitemap[number] = {

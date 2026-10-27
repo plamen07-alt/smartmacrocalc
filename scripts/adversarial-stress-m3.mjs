@@ -702,7 +702,7 @@ if (hasGuidesHtml) {
       const html = fs.readFileSync(htmlFilePath, 'utf-8');
 
       // Canonical link
-      const hasCanonical = html.includes(`<link rel="canonical" href="https://smartmacrocalc.com/guides/${a.slug}"`);
+      const hasCanonical = html.includes(`<link rel="canonical" href="https://www.smartmacrocalc.com/guides/${a.slug}"`);
       recordAssert(
         'htmlArtifacts',
         hasCanonical,
