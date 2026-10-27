@@ -52,7 +52,11 @@ export function InteractiveContactForm() {
         </div>
         <p className="mt-2 text-xs leading-relaxed text-emerald-900">
           Thank you, <strong>{sanitizeBrandParam(name, 60) || 'Colleague'}</strong>. Your message regarding{' '}
-          <strong>{category}</strong> has been logged with the SmartMacroCalc.com Clinical Editorial &amp; Engineering Desk. A response will be sent to{' '}
+          <strong>{category}</strong> has been logged for our Clinical Editorial &amp; Engineering Desk (
+          <a href="mailto:gainsystemized@gmail.com" className="font-mono font-bold underline">
+            gainsystemized@gmail.com
+          </a>
+          ). A response will be sent to{' '}
           <span className="font-mono underline">{email.slice(0, 80)}</span> within 24 business hours.
         </p>
         <button

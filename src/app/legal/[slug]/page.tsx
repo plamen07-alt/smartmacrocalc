@@ -102,7 +102,7 @@ const LEGAL_PAGES: Record<
       {
         heading: 'Direct Support & Partnership Channels',
         paragraphs: [
-          'Have a question about one of our BMR equations, want to report a clinical study, or need help configuring your White-Label Coach link? Use the form below or email editorial@smartmacrocalc.com. Our team responds within 24 business hours.',
+          'Have a question about one of our BMR equations, want to report a clinical study, or need help configuring your White-Label Coach link? Use the form below or email gainsystemized@gmail.com. Our team responds within 24 business hours.',
         ],
       },
     ],
@@ -220,7 +220,7 @@ export default async function LegalPage({
       'Clinical Health & Nutrition Calculator Platform engineering hospital-grade indirect calorimetry equations into client-side tools.',
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'editorial@smartmacrocalc.com',
+      email: 'gainsystemized@gmail.com',
       contactType: 'Customer Support and Editorial Inquiries',
     },
   };
