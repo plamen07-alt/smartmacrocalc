@@ -41,13 +41,13 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* Column 2: Programmatic SEO Presets */}
+          {/* Column 2: Biometric Presets */}
           <div>
             <h4 className="text-xs font-bold tracking-wider text-white uppercase">
-              Popular Biometric Presets (pSEO)
+              Popular Biometric Presets
             </h4>
             <ul className="mt-3 space-y-2 text-xs">
-              {SEO_PRESETS.map((preset) => (
+              {SEO_PRESETS.slice(0, 8).map((preset) => (
                 <li key={preset.slug}>
                   <Link
                     href={`/presets/${preset.slug}`}
@@ -57,6 +57,14 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/presets"
+                  className="font-semibold text-teal-400 hover:underline"
+                >
+                  Browse All {SEO_PRESETS.length} Clinical Profiles →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -98,10 +106,10 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 4: Mandatory AdSense & Legal Pages */}
+          {/* Column 4: Legal & Editorial Pages */}
           <div>
             <h4 className="text-xs font-bold tracking-wider text-white uppercase">
-              Trust, Legal & AdSense Compliance
+              Clinical Trust, Privacy &amp; Legal
             </h4>
             <ul className="mt-3 space-y-2 text-xs">
               <li>

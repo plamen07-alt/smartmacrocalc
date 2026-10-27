@@ -101,7 +101,7 @@ export function MacroAppExporter({
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-50 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
             <Smartphone className="h-3.5 w-3.5" />
-            Retention Strategy #6 • Direct Food Tracker Integration
+            Direct Nutrition App Integration
           </span>
           <h3 className="mt-1 text-lg font-bold text-slate-900">
             1-Click Export to MyFitnessPal, Cronometer &amp; MacroFactor

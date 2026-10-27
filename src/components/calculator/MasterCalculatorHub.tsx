@@ -12,8 +12,6 @@ import {
   Scale,
   ArrowRight,
   CheckCircle2,
-  Eye,
-  EyeOff,
   RotateCcw,
   BookOpen,
   Clock,
@@ -144,7 +142,7 @@ export function MasterCalculatorHub({
     {
       id: 'glp1',
       label: 'GLP-1 & Ozempic Muscle Guard',
-      badge: 'Anti-Sarcopenia • $32 RPM',
+      badge: 'Anti-Sarcopenia • 1.0g/lb LBM',
       icon: <ShieldAlert className="h-4 w-4" />,
     },
     {
@@ -226,7 +224,7 @@ export function MasterCalculatorHub({
                   {presetTitle ? presetTitle : '1. Personal Biometric Parameters'}
                 </h2>
                 <p className="text-xs text-slate-500">
-                  Shared automatically across all 5 clinical calculators
+                  Shared automatically across all 7 clinical calculators
                 </p>
               </div>
 
@@ -952,15 +950,9 @@ export function MasterCalculatorHub({
                 <RotateCcw className="h-3.5 w-3.5" />
                 Reset to Default Profile
               </button>
-
-              <button
-                type="button"
-                onClick={() => setShowAdPreview(!showAdPreview)}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-600 hover:bg-slate-100"
-              >
-                {showAdPreview ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-                {showAdPreview ? 'Hide Ad Slot Preview' : 'Show Ad Slot Preview'}
-              </button>
+              <span className="text-[11px] font-medium text-slate-400">
+                100% Client-Side • Zero Data Uploaded
+              </span>
             </div>
           </div>
         </div>
@@ -1255,7 +1247,7 @@ export function MasterCalculatorHub({
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
               <div className="border-b border-slate-100 pb-4">
                 <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-900">
-                  Strategy #3 • Metabolic Recovery & Reverse Diet Planner
+                  Metabolic Recovery &amp; Reverse Diet Planner
                 </span>
                 <h3 className="mt-1.5 text-xl font-bold text-slate-900">
                   Step-by-Step +{bio.reverseStepKcal} kcal/Week Bridge to True Maintenance ({report.tdee}{' '}
@@ -1301,7 +1293,7 @@ export function MasterCalculatorHub({
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
               <div className="border-b border-slate-100 pb-4">
                 <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-bold text-teal-900">
-                  Micro-Niche #6 • Fat-Free Mass Index (FFMI) & 3.0g Leucine Meal Trigger
+                  Fat-Free Mass Index (FFMI) &amp; 3.0g Leucine Meal Trigger
                 </span>
                 <h3 className="mt-1.5 text-xl font-bold text-slate-900">
                   Muscular Potential Assessment & Complete Amino Matrix
@@ -1381,7 +1373,7 @@ export function MasterCalculatorHub({
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
               <div className="border-b border-slate-100 pb-4">
                 <span className="rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-bold text-sky-900">
-                  Micro-Niche #5 • Creatine Saturation, Hydration & Sauna/Keto Electrolytes
+                  Creatine Saturation, Hydration &amp; Sauna/Keto Electrolytes
                 </span>
                 <h3 className="mt-1.5 text-xl font-bold text-slate-900">
                   Daily Intracellular Fluid & Mineral Replacement Targets
@@ -1438,7 +1430,7 @@ export function MasterCalculatorHub({
             <div className="rounded-2xl border border-purple-200 bg-white p-6 shadow-xs">
               <div className="border-b border-purple-100 pb-4">
                 <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-bold text-purple-900 ring-1 ring-purple-300">
-                  Micro-Niche #3 • Perimenopause &amp; Hormone Macro / TDEE Protocol
+                  Perimenopause &amp; Hormone Macro / TDEE Protocol
                 </span>
                 <h3 className="mt-1.5 text-xl font-bold text-slate-900">
                   Anabolic Resistance Overcoming &amp; Cortisol-Friendly Carbohydrate Cycling

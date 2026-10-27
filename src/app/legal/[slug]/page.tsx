@@ -265,7 +265,7 @@ export default async function LegalPage({
       <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-10">
         <div className="flex items-center gap-2 text-xs font-bold text-teal-700 uppercase">
           <ShieldCheck className="h-4 w-4" />
-          AdSense &amp; E-E-A-T Compliance Documentation
+          Clinical Editorial, Privacy &amp; Regulatory Documentation
         </div>
         <h1 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">{page.title}</h1>
         <p className="mt-1 text-xs font-medium text-slate-500">{page.subtitle}</p>

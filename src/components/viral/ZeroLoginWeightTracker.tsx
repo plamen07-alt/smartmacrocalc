@@ -178,7 +178,7 @@ export function ZeroLoginWeightTracker({
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-indigo-700">
             <Database className="h-3.5 w-3.5" />
-            {headerInfo.badge} (Strategy #2 &amp; #5)
+            {headerInfo.badge}
           </span>
           <h3 className="mt-1 text-lg font-bold text-slate-900">
             {headerInfo.title}

@@ -112,7 +112,7 @@ export default function HomePage() {
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-bold text-indigo-700">
               <Layers className="h-3.5 w-3.5" />
-              Programmatic SEO Architecture (2nd-Order Specificity)
+              Pre-Computed Biometric Reference Library (64 Profiles)
             </span>
             <h2 className="mt-1.5 text-xl font-bold text-slate-900">
               Pre-Calibrated Biometric Profiles &amp; Micro-Niche Protocols
@@ -160,7 +160,7 @@ export default function HomePage() {
         <div className="border-b border-slate-200 pb-6">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800">
             <BookOpen className="h-3.5 w-3.5" />
-            Comprehensive Clinical Documentation &amp; Mathematical Methodology (E-E-A-T)
+            Comprehensive Clinical Documentation &amp; Mathematical Methodology
           </span>
           <h2 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
             How the 3-Formula Bioenergetics &amp; Nutrient Partitioning Engine Works

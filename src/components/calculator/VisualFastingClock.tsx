@@ -219,7 +219,7 @@ export function VisualFastingClock({
           <div>
             <div className="inline-flex items-center gap-1.5 rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-900 ring-1 ring-sky-300">
               <Clock className="h-3.5 w-3.5 text-sky-700" />
-              Micro-Niche #4 • Circadian Fasting Timeline &amp; Sarcopenia Shield
+              Circadian Fasting Timeline &amp; Sarcopenia Shield
             </div>
             <h2 className="mt-2 text-2xl font-black text-slate-900">
               Visual Intermittent Fasting Clock &amp; Loss Curve

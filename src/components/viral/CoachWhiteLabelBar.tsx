@@ -149,7 +149,7 @@ export function CoachWhiteLabelBar() {
 
             <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-teal-700 uppercase">
               <Sparkles className="h-4 w-4" />
-              B2B Viral Growth Engine (Strategies #4 &amp; #7)
+              Clinical Coach &amp; Health Publisher Portal
             </div>
             <h3 className="mt-1 text-xl font-bold text-slate-900">
               Free White-Label Coach Link &amp; Blogger Iframe Widget

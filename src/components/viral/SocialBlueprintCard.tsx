@@ -777,7 +777,7 @@ ${report.reverseDietSchedule.slice(0, 8).map((w) => `| Week ${w.week} | **${w.da
         <div>
           <div className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/20 px-2.5 py-0.5 text-xs font-semibold text-teal-300 ring-1 ring-teal-400/30">
             <Sparkles className="h-3.5 w-3.5" />
-            Viral Growth Loop #1 &amp; #4 • Shareable {nicheLabel} Passport
+            Clinical Metabolic Passport • Shareable {nicheLabel} Summary
           </div>
           <h3 className="mt-1.5 text-lg font-bold text-white">
             Download Your {nicheLabel} Blueprint Card (PNG)

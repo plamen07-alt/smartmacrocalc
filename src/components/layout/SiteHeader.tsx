@@ -5,7 +5,7 @@ import { CoachWhiteLabelBar } from '@/components/viral/CoachWhiteLabelBar';
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 bg-white/95 shadow-2xs backdrop-blur-md">
+    <header className="sticky top-0 z-40 bg-white shadow-2xs">
       <CoachWhiteLabelBar />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
@@ -22,7 +22,7 @@ export function SiteHeader() {
               </span>
             </div>
             <p className="text-[11px] font-medium text-slate-500">
-              Precision Body Recomposition, GLP-1 & Macro Cycling Engine
+              Precision Body Recomposition, GLP-1 &amp; Macro Cycling Engine
             </p>
           </div>
         </Link>
@@ -31,9 +31,9 @@ export function SiteHeader() {
           <Link href="/" className="transition hover:text-teal-600">
             Calculator Hub
           </Link>
-          <Link href="/#programmatic-presets" className="flex items-center gap-1 transition hover:text-teal-600">
+          <Link href="/presets" className="flex items-center gap-1 transition hover:text-teal-600">
             <Layers className="h-3.5 w-3.5 text-teal-600" />
-            Preset Profiles (pSEO)
+            Preset Profiles
           </Link>
           <Link href="/#scientific-methodology" className="flex items-center gap-1 transition hover:text-teal-600">
             <BookOpen className="h-3.5 w-3.5 text-teal-600" />
@@ -44,7 +44,7 @@ export function SiteHeader() {
           </Link>
           <Link href="/legal/about" className="flex items-center gap-1 transition hover:text-teal-600">
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-            E-E-A-T & Editorial
+            About &amp; Editorial
           </Link>
         </nav>
 

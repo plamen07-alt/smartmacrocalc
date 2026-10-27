@@ -90,7 +90,7 @@ export default function PresetsDirectoryPage() {
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/20 px-3 py-1 text-xs font-bold text-teal-300 ring-1 ring-teal-400/30">
             <Layers className="h-3.5 w-3.5" />
-            Programmatic SEO Directory • 64 Pre-Computed Clinical Profiles
+            Clinical Biometric Directory • 64 Pre-Computed Profiles
           </span>
           <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-200">
             <ShieldCheck className="h-3 w-3 text-emerald-400" />
