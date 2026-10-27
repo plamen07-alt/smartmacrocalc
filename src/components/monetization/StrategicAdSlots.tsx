@@ -197,7 +197,7 @@ export function LabTestedAffiliateDirectory({ proteinGrams }: { proteinGrams: nu
       verificationNote: 'NSF Certified for Sport® • ISO-17025 Heavy-Metal Screened',
       highlight: `Delivers ${Math.round(((28 * 2) / Math.max(100, proteinGrams)) * 100)}% of your ${proteinGrams}g daily protein target in two low-volume servings while crossing the 3.0g leucine mTORC1 trigger.`,
       badgeColor: 'bg-teal-600 text-white',
-      guideLink: '/guides/leucine-threshold-aging-muscle-protein-synthesis',
+      guideLink: '/guides/protein-distribution-per-meal-anabolic-ceiling-mTORC1',
       guideLabel: 'Read Leucine & MPS Clinical Guide',
     },
     {
@@ -208,7 +208,7 @@ export function LabTestedAffiliateDirectory({ proteinGrams }: { proteinGrams: nu
       verificationNote: 'Clinical GI Tolerance • Third-Party Purity Verified',
       highlight: 'Engineered for patients experiencing early satiety on Semaglutide or Tirzepatide who need maximal myofibrillar preservation without meal volume.',
       badgeColor: 'bg-indigo-600 text-white',
-      guideLink: '/guides/glp1-semaglutide-lean-mass-preservation-protocol',
+      guideLink: '/guides/glp1-semaglutide-tirzepatide-lean-muscle-preservation',
       guideLabel: 'Read GLP-1 Muscle Preservation Study',
     },
     {
@@ -219,7 +219,7 @@ export function LabTestedAffiliateDirectory({ proteinGrams }: { proteinGrams: nu
       verificationNote: '99.99% Analytical Purity • Zero Artificial Binders',
       highlight: 'Supports intracellular water retention, ATP resynthesis during resistance training, and electrolyte balance during fasting or sauna protocols.',
       badgeColor: 'bg-slate-800 text-white',
-      guideLink: '/guides/creatine-monohydrate-cellular-hydration-saturation-kinetics',
+      guideLink: '/guides/creatine-monohydrate-intracellular-hydration-atp',
       guideLabel: 'Read Creatine & Hydration Evidence',
     },
   ];
