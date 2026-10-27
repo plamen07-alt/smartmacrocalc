@@ -44,11 +44,20 @@ export async function generateMetadata({
       type: 'article',
       siteName: 'SmartMacroCalc.com',
       publishedTime: '2026-01-01T00:00:00.000Z',
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: `${preset.title} | SmartMacroCalc.com`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${preset.title} | SmartMacroCalc.com`,
       description: preset.metaDescription,
+      images: ['/opengraph-image'],
     },
   };
 }

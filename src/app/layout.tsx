@@ -4,20 +4,55 @@ import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.smartmacrocalc.com'),
   title:
     'SmartMacroCalc.com | Body Recomposition, GLP-1 Protein & Macro Cycling Calculator',
   description:
-    'Clinical-grade Body Recomposition, Calorie Cycling (+5%/-20%), GLP-1 & Ozempic Muscle Preservation, Reverse Dieting (+80 kcal/wk), FFMI & Sweat Electrolyte Calculator powered by Mifflin-St Jeor, Katch-McArdle & Cunningham equations.',
+    'Clinical-grade Body Recomposition, Calorie Cycling (+5%/-20%), GLP-1 & Ozempic Muscle Preservation, Perimenopause, 16:8 Fasting Clock, Reverse Dieting (+80 kcal/wk), FFMI & Electrolyte Calculator.',
   keywords: [
     'body recomposition calculator',
     'calorie cycling calculator',
     'GLP-1 protein calculator',
     'Ozempic macro calculator',
+    'perimenopause macro calculator',
+    'intermittent fasting 16:8 calculator',
     'reverse diet calculator',
     'Katch-McArdle TDEE calculator',
     'Cunningham equation BMR',
     'leucine protein synthesis calculator',
   ],
+  alternates: {
+    canonical: 'https://www.smartmacrocalc.com',
+  },
+  icons: {
+    icon: '/icon.svg',
+  },
+  openGraph: {
+    title:
+      'SmartMacroCalc.com | Body Recomposition, GLP-1 Protein & Macro Cycling Calculator',
+    description:
+      'Calculate your exact Training Day (+5%) & Rest Day (-20%) macros, GLP-1 anti-sarcopenia protein floor, Perimenopause targets, 16:8 Fasting clock & 12-week body fat trajectory.',
+    url: 'https://www.smartmacrocalc.com',
+    siteName: 'SmartMacroCalc.com',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'SmartMacroCalc.com — Body Recomposition, GLP-1 Protein & Calorie Cycling Calculator',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'SmartMacroCalc.com | Body Recomposition, GLP-1 Protein & Macro Cycling Calculator',
+    description:
+      'Calculate your exact Training Day (+5%) & Rest Day (-20%) macros, GLP-1 anti-sarcopenia protein floor, Perimenopause targets & 12-week body fat trajectory.',
+    images: ['/opengraph-image'],
+  },
 };
 
 export default function RootLayout({
