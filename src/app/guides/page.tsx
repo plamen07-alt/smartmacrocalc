@@ -29,7 +29,7 @@ export default function GuidesIndexPage() {
             <div>
               <div className="flex items-center justify-between text-xs font-bold text-teal-700">
                 <span>{art.category}</span>
-                <span className="text-slate-400">{art.readTime}</span>
+                <span className="text-slate-500">{art.readTime}</span>
               </div>
               <h2 className="mt-2.5 text-lg font-bold text-slate-900">{art.title}</h2>
               <p className="mt-2 text-xs leading-relaxed text-slate-600">{art.excerpt}</p>

@@ -160,10 +160,12 @@ export function CoachWhiteLabelBar() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-xs font-semibold text-slate-700">
+                <label htmlFor="coach-name-input" className="block text-xs font-semibold text-slate-700">
                   Coach or Trainer Name
                 </label>
                 <input
+                  id="coach-name-input"
+                  aria-label="Coach or trainer name"
                   type="text"
                   value={inputCoach}
                   onChange={(e) => setInputCoach(e.target.value)}
@@ -172,10 +174,12 @@ export function CoachWhiteLabelBar() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700">
+                <label htmlFor="clinic-name-input" className="block text-xs font-semibold text-slate-700">
                   Gym / Clinic / Brand Name
                 </label>
                 <input
+                  id="clinic-name-input"
+                  aria-label="Gym, clinic, or brand name"
                   type="text"
                   value={inputClinic}
                   onChange={(e) => setInputClinic(e.target.value)}
@@ -187,10 +191,12 @@ export function CoachWhiteLabelBar() {
 
             {/* Target Calculator Niche Selector */}
             <div className="mt-4">
-              <label className="block text-xs font-semibold text-slate-700">
+              <label htmlFor="target-calculator-focus" className="block text-xs font-semibold text-slate-700">
                 Target Calculator Focus Mode (?tab= parameter)
               </label>
               <select
+                id="target-calculator-focus"
+                aria-label="Target calculator focus mode"
                 value={selectedTab}
                 onChange={(e) => setSelectedTab(e.target.value)}
                 className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-900 focus:border-teal-600 focus:outline-none"
@@ -223,6 +229,8 @@ export function CoachWhiteLabelBar() {
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <input
+                  id="generated-coach-url"
+                  aria-label="Generated client white-label URL"
                   type="text"
                   readOnly
                   value={generatedCoachUrl}

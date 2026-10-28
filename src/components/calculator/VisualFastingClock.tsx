@@ -438,6 +438,8 @@ export function VisualFastingClock({
               </span>
             </div>
             <input
+              id="fasting-clock-start-hour"
+              aria-label="Feeding window start time"
               type="range"
               min={6}
               max={18}
@@ -446,7 +448,7 @@ export function VisualFastingClock({
               onChange={(e) => onWindowStartHourChange?.(Number(e.target.value))}
               className="mt-3 w-full accent-sky-600"
             />
-            <div className="mt-1 flex justify-between text-[10px] font-semibold text-slate-400">
+            <div className="mt-1 flex justify-between text-[10px] font-semibold text-slate-600">
               <span>6:00 AM (Early)</span>
               <span>12:00 PM (Noon)</span>
               <span>6:00 PM (Evening)</span>

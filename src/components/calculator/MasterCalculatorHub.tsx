@@ -285,11 +285,13 @@ export function MasterCalculatorHub({
               </div>
 
               <div>
-                <label className="flex justify-between text-xs font-semibold text-slate-700">
+                <label htmlFor="bio-age" className="flex justify-between text-xs font-semibold text-slate-700">
                   <span>Age</span>
                   <span className="font-mono font-bold text-teal-700">{bio.age} yrs</span>
                 </label>
                 <input
+                  id="bio-age"
+                  aria-label="Age in years"
                   type="range"
                   min={18}
                   max={80}
@@ -312,6 +314,8 @@ export function MasterCalculatorHub({
               </div>
               {bio.unitSystem === 'imperial' ? (
                 <input
+                  id="bio-weight-lbs"
+                  aria-label="Current scale weight in pounds"
                   type="range"
                   min={90}
                   max={360}
@@ -322,6 +326,8 @@ export function MasterCalculatorHub({
                 />
               ) : (
                 <input
+                  id="bio-weight-kg"
+                  aria-label="Current scale weight in kilograms"
                   type="range"
                   min={40}
                   max={165}
@@ -344,8 +350,10 @@ export function MasterCalculatorHub({
               {bio.unitSystem === 'imperial' ? (
                 <div className="mt-1.5 grid grid-cols-2 gap-3">
                   <div>
-                    <label className="text-[11px] text-slate-500">Feet</label>
+                    <label htmlFor="bio-height-feet" className="text-[11px] font-medium text-slate-600">Feet</label>
                     <select
+                      id="bio-height-feet"
+                      aria-label="Height feet"
                       value={feet}
                       onChange={(e) =>
                         updateBio({ heightCm: feetInchesToCm(Number(e.target.value), inches) })
@@ -360,8 +368,10 @@ export function MasterCalculatorHub({
                     </select>
                   </div>
                   <div>
-                    <label className="text-[11px] text-slate-500">Inches</label>
+                    <label htmlFor="bio-height-inches" className="text-[11px] font-medium text-slate-600">Inches</label>
                     <select
+                      id="bio-height-inches"
+                      aria-label="Height inches"
                       value={inches}
                       onChange={(e) =>
                         updateBio({ heightCm: feetInchesToCm(feet, Number(e.target.value)) })
@@ -378,6 +388,8 @@ export function MasterCalculatorHub({
                 </div>
               ) : (
                 <input
+                  id="bio-height-cm"
+                  aria-label="Height in centimeters"
                   type="range"
                   min={140}
                   max={215}
@@ -397,6 +409,8 @@ export function MasterCalculatorHub({
                 </span>
               </div>
               <input
+                id="bio-body-fat"
+                aria-label="Estimated body fat percentage"
                 type="range"
                 min={6}
                 max={48}
@@ -405,7 +419,7 @@ export function MasterCalculatorHub({
                 onChange={(e) => updateBio({ bodyFatPct: Number(e.target.value) })}
                 className="mt-2 w-full accent-teal-600"
               />
-              <div className="mt-1 flex justify-between text-[10px] text-slate-400">
+              <div className="mt-1 flex justify-between text-[10px] font-medium text-slate-600">
                 <span>Athletic (8–14%)</span>
                 <span>Recomp Zone (15–24%)</span>
                 <span>High Adiposity (25%+)</span>
@@ -478,7 +492,7 @@ export function MasterCalculatorHub({
                         <div className="font-mono text-sm font-bold text-teal-800">
                           {f.val} kcal
                         </div>
-                        <div className="text-[10px] text-slate-400">BMR / day</div>
+                        <div className="text-[10px] font-medium text-slate-600">BMR / day</div>
                       </div>
                     </button>
                   );
@@ -488,10 +502,12 @@ export function MasterCalculatorHub({
 
             {/* Activity Multiplier */}
             <div className="mt-4">
-              <label className="block text-xs font-bold text-slate-800">
-                3. Daily Lifestyle & Activity Multiplier
+              <label htmlFor="bio-activity-level" className="block text-xs font-bold text-slate-800">
+                3. Daily Lifestyle &amp; Activity Multiplier
               </label>
               <select
+                id="bio-activity-level"
+                aria-label="Daily lifestyle and activity multiplier"
                 value={bio.activityLevel}
                 onChange={(e) => updateBio({ activityLevel: e.target.value as ActivityLevel })}
                 className="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-xs font-semibold text-slate-900 focus:border-teal-600 focus:outline-none"
@@ -523,6 +539,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-training-days"
+                      aria-label="Lifting or training days per week"
                       type="range"
                       min={1}
                       max={6}
@@ -541,6 +559,8 @@ export function MasterCalculatorHub({
                         </span>
                       </div>
                       <input
+                        id="bio-training-surplus"
+                        aria-label="Training day surplus percentage"
                         type="range"
                         min={-5}
                         max={15}
@@ -559,6 +579,8 @@ export function MasterCalculatorHub({
                         </span>
                       </div>
                       <input
+                        id="bio-rest-deficit"
+                        aria-label="Rest day deficit percentage"
                         type="range"
                         min={-30}
                         max={-5}
@@ -574,10 +596,12 @@ export function MasterCalculatorHub({
               {activeTab === 'glp1' && (
                 <div className="mt-3 space-y-3">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700">
+                    <label htmlFor="bio-glp1-med" className="block text-xs font-semibold text-slate-700">
                       GLP-1 / GIP Medication Type
                     </label>
                     <select
+                      id="bio-glp1-med"
+                      aria-label="GLP-1 or GIP medication type"
                       value={bio.glp1Medication}
                       onChange={(e) =>
                         updateBio({ glp1Medication: e.target.value as Glp1Medication })
@@ -592,10 +616,12 @@ export function MasterCalculatorHub({
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-700">
+                    <label htmlFor="bio-glp1-stage" className="block text-[11px] font-semibold text-slate-700">
                       Titration / Dose Stage
                     </label>
                     <select
+                      id="bio-glp1-stage"
+                      aria-label="GLP-1 titration or dose stage"
                       value={bio.glp1DoseStage}
                       onChange={(e) =>
                         updateBio({
@@ -612,10 +638,12 @@ export function MasterCalculatorHub({
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-700">
+                      <label htmlFor="bio-appetite-level" className="block text-[11px] font-semibold text-slate-700">
                         Appetite Suppression
                       </label>
                       <select
+                        id="bio-appetite-level"
+                        aria-label="Appetite suppression level"
                         value={bio.appetiteSuppressionLevel}
                         onChange={(e) =>
                           updateBio({
@@ -633,10 +661,12 @@ export function MasterCalculatorHub({
                       </select>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-700">
+                      <label htmlFor="bio-meals-per-day-glp1" className="block text-[11px] font-semibold text-slate-700">
                         Meals / Shakes per Day
                       </label>
                       <select
+                        id="bio-meals-per-day-glp1"
+                        aria-label="Meals or shakes per day"
                         value={bio.mealsPerDay}
                         onChange={(e) => updateBio({ mealsPerDay: Number(e.target.value) })}
                         className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-semibold"
@@ -655,10 +685,12 @@ export function MasterCalculatorHub({
               {activeTab === 'perimenopause' && (
                 <div className="mt-3 space-y-3">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700">
+                    <label htmlFor="bio-perimenopause-stage" className="block text-xs font-semibold text-slate-700">
                       Menopausal Transition Stage
                     </label>
                     <select
+                      id="bio-perimenopause-stage"
+                      aria-label="Menopausal transition stage"
                       value={bio.perimenopauseStage || 'early_transition'}
                       onChange={(e) =>
                         updateBio({
@@ -681,6 +713,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-perimenopause-lifting-days"
+                      aria-label="Resistance lifting days per week"
                       type="range"
                       min={2}
                       max={5}
@@ -694,10 +728,12 @@ export function MasterCalculatorHub({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700">
+                    <label htmlFor="bio-carb-timing" className="block text-xs font-semibold text-slate-700">
                       Carbohydrate Timing Strategy
                     </label>
                     <select
+                      id="bio-carb-timing"
+                      aria-label="Carbohydrate timing strategy"
                       value={bio.carbTimingPreference || 'evening_cortisol'}
                       onChange={(e) =>
                         updateBio({
@@ -722,10 +758,12 @@ export function MasterCalculatorHub({
               {activeTab === 'fasting' && (
                 <div className="mt-3 space-y-3">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700">
+                    <label htmlFor="bio-fasting-protocol" className="block text-xs font-semibold text-slate-700">
                       Intermittent Fasting Protocol
                     </label>
                     <select
+                      id="bio-fasting-protocol"
+                      aria-label="Intermittent fasting protocol"
                       value={bio.fastingProtocol || '16:8'}
                       onChange={(e) =>
                         updateBio({
@@ -753,6 +791,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-fasting-start-hour"
+                      aria-label="Eating window start time"
                       type="range"
                       min={8}
                       max={18}
@@ -766,7 +806,7 @@ export function MasterCalculatorHub({
                       }
                       className="mt-1 w-full accent-teal-600"
                     />
-                    <div className="flex justify-between text-[10px] text-slate-400">
+                    <div className="flex justify-between text-[10px] font-medium text-slate-600">
                       <span>8:00 AM (Early)</span>
                       <span>12:00 PM (Standard)</span>
                       <span>6:00 PM (Late)</span>
@@ -774,10 +814,12 @@ export function MasterCalculatorHub({
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-700">
+                    <label htmlFor="bio-fasting-meals" className="block text-[11px] font-semibold text-slate-700">
                       Meals Planned Inside Window
                     </label>
                     <select
+                      id="bio-fasting-meals"
+                      aria-label="Meals planned inside fasting window"
                       value={bio.mealsPerDay || 3}
                       onChange={(e) => updateBio({ mealsPerDay: Number(e.target.value) })}
                       className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-semibold"
@@ -801,6 +843,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-reverse-calories"
+                      aria-label="Current restricted diet calories"
                       type="range"
                       min={1100}
                       max={Math.max(1500, report.tdee - 100)}
@@ -818,6 +862,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-reverse-step"
+                      aria-label="Weekly step-up pace in calories"
                       type="range"
                       min={50}
                       max={150}
@@ -840,6 +886,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-workout-minutes"
+                      aria-label="Workout duration in minutes"
                       type="range"
                       min={30}
                       max={120}
@@ -852,10 +900,12 @@ export function MasterCalculatorHub({
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-700">
+                      <label htmlFor="bio-sweat-intensity" className="block text-[11px] font-semibold text-slate-700">
                         Sweat Rate
                       </label>
                       <select
+                        id="bio-sweat-intensity"
+                        aria-label="Sweat rate intensity"
                         value={bio.sweatIntensity}
                         onChange={(e) =>
                           updateBio({
@@ -870,10 +920,12 @@ export function MasterCalculatorHub({
                       </select>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-700">
+                      <label htmlFor="bio-sauna-sessions" className="block text-[11px] font-semibold text-slate-700">
                         Sauna Sessions / Wk
                       </label>
                       <select
+                        id="bio-sauna-sessions"
+                        aria-label="Sauna sessions per week"
                         value={bio.saunaSessionsPerWeek}
                         onChange={(e) =>
                           updateBio({ saunaSessionsPerWeek: Number(e.target.value) })
@@ -890,6 +942,8 @@ export function MasterCalculatorHub({
                   </div>
                   <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                     <input
+                      id="bio-keto-checkbox"
+                      aria-label="Following Keto, Carnivore, or Intermittent Fasting"
                       type="checkbox"
                       checked={bio.isKetoOrLowCarb}
                       onChange={(e) => updateBio({ isKetoOrLowCarb: e.target.checked })}
@@ -903,10 +957,12 @@ export function MasterCalculatorHub({
               {activeTab === 'ffmi' && (
                 <div className="mt-3 space-y-3">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700">
+                    <label htmlFor="bio-diet-preference" className="block text-xs font-semibold text-slate-700">
                       Dietary Amino Preference
                     </label>
                     <select
+                      id="bio-diet-preference"
+                      aria-label="Dietary amino preference"
                       value={bio.dietPreference || 'omnivore'}
                       onChange={(e) =>
                         updateBio({
@@ -928,6 +984,8 @@ export function MasterCalculatorHub({
                       </span>
                     </div>
                     <input
+                      id="bio-protein-per-lbm"
+                      aria-label="Protein target per pound of lean body mass"
                       type="range"
                       min={0.9}
                       max={1.4}
@@ -950,7 +1008,7 @@ export function MasterCalculatorHub({
                 <RotateCcw className="h-3.5 w-3.5" />
                 Reset to Default Profile
               </button>
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[11px] font-medium text-slate-600">
                 100% Client-Side • Zero Data Uploaded
               </span>
             </div>
@@ -1054,7 +1112,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-teal-700">
                         {report.trainingDayMacros.proteinGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.trainingDayMacros.proteinPct}%
                       </div>
                     </div>
@@ -1063,7 +1121,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-amber-600">
                         {report.trainingDayMacros.carbsGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.trainingDayMacros.carbsPct}%
                       </div>
                     </div>
@@ -1072,7 +1130,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-indigo-600">
                         {report.trainingDayMacros.fatGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.trainingDayMacros.fatPct}%
                       </div>
                     </div>
@@ -1102,7 +1160,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-teal-700">
                         {report.restDayMacros.proteinGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.restDayMacros.proteinPct}%
                       </div>
                     </div>
@@ -1111,7 +1169,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-amber-600">
                         {report.restDayMacros.carbsGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.restDayMacros.carbsPct}%
                       </div>
                     </div>
@@ -1120,7 +1178,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-indigo-600">
                         {report.restDayMacros.fatGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.restDayMacros.fatPct}%
                       </div>
                     </div>
@@ -1580,7 +1638,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-teal-700">
                         {report.perimenopauseProtocol.trainingDayMacros.proteinGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.trainingDayMacros.proteinPct}%
                       </div>
                     </div>
@@ -1589,7 +1647,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-amber-600">
                         {report.perimenopauseProtocol.trainingDayMacros.carbsGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.trainingDayMacros.carbsPct}%
                       </div>
                     </div>
@@ -1598,7 +1656,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-indigo-600">
                         {report.perimenopauseProtocol.trainingDayMacros.fatGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.trainingDayMacros.fatPct}%
                       </div>
                     </div>
@@ -1627,7 +1685,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-teal-700">
                         {report.perimenopauseProtocol.restDayMacros.proteinGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.restDayMacros.proteinPct}%
                       </div>
                     </div>
@@ -1636,7 +1694,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-amber-600">
                         {report.perimenopauseProtocol.restDayMacros.carbsGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.restDayMacros.carbsPct}%
                       </div>
                     </div>
@@ -1645,7 +1703,7 @@ export function MasterCalculatorHub({
                       <div className="font-mono text-lg font-extrabold text-indigo-600">
                         {report.perimenopauseProtocol.restDayMacros.fatGrams}g
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] font-medium text-slate-600">
                         {report.perimenopauseProtocol.restDayMacros.fatPct}%
                       </div>
                     </div>

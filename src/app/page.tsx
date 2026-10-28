@@ -421,7 +421,7 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between text-[11px] font-semibold text-teal-700">
                   <span>{art.category}</span>
-                  <span className="text-slate-400">{art.readTime}</span>
+                  <span className="text-slate-500">{art.readTime}</span>
                 </div>
                 <h3 className="mt-2 text-base font-bold text-slate-900">{art.title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600">{art.excerpt}</p>

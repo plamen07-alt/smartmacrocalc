@@ -42,7 +42,7 @@ export function GoogleAdSenseUnit({
 
   return (
     <div className={`overflow-hidden text-center ${className}`}>
-      <div className="mb-1 text-[10px] tracking-widest text-slate-400 uppercase">Advertisement</div>
+      <div className="mb-1 text-[10px] font-medium tracking-widest text-slate-500 uppercase">Advertisement</div>
       <ins
         className="adsbygoogle block"
         style={{ display: 'block' }}

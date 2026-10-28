@@ -81,6 +81,7 @@ export function InteractiveContactForm() {
         <input
           id="website_url_hp"
           name="website_url_hp"
+          aria-label="Website URL honeypot - leave empty"
           type="text"
           tabIndex={-1}
           autoComplete="off"
@@ -98,8 +99,10 @@ export function InteractiveContactForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-xs font-bold text-slate-700">Your Name</label>
+          <label htmlFor="contact-name" className="block text-xs font-bold text-slate-700">Your Name</label>
           <input
+            id="contact-name"
+            aria-label="Your Name"
             type="text"
             required
             maxLength={60}
@@ -110,8 +113,10 @@ export function InteractiveContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700">Email Address</label>
+          <label htmlFor="contact-email" className="block text-xs font-bold text-slate-700">Email Address</label>
           <input
+            id="contact-email"
+            aria-label="Email Address"
             type="email"
             required
             maxLength={80}
@@ -123,8 +128,10 @@ export function InteractiveContactForm() {
         </div>
       </div>
       <div>
-        <label className="block text-xs font-bold text-slate-700">Inquiry Category</label>
+        <label htmlFor="contact-category" className="block text-xs font-bold text-slate-700">Inquiry Category</label>
         <select
+          id="contact-category"
+          aria-label="Inquiry Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 focus:border-teal-600 focus:outline-none"

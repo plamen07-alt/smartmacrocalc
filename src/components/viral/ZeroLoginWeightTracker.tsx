@@ -327,8 +327,10 @@ export function ZeroLoginWeightTracker({
 
         <form onSubmit={handleAddLog} className="mt-3 flex flex-wrap items-end gap-3">
           <div>
-            <label className="block text-[11px] font-semibold text-slate-600">Date</label>
+            <label htmlFor="weight-log-date" className="block text-[11px] font-semibold text-slate-600">Date</label>
             <input
+              id="weight-log-date"
+              aria-label="Date of weigh-in"
               type="date"
               value={inputDate}
               onChange={(e) => setInputDate(e.target.value)}
@@ -336,10 +338,12 @@ export function ZeroLoginWeightTracker({
             />
           </div>
           <div>
-            <label className="block text-[11px] font-semibold text-slate-600">
+            <label htmlFor="weight-log-val" className="block text-[11px] font-semibold text-slate-600">
               Morning Scale Weight ({unitSystem === 'imperial' ? 'lbs' : 'kg'})
             </label>
             <input
+              id="weight-log-val"
+              aria-label="Morning Scale Weight"
               type="number"
               step="0.1"
               value={inputWeight}

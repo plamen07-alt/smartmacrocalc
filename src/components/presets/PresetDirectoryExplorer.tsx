@@ -121,11 +121,13 @@ export function PresetDirectoryExplorer({ presets }: PresetDirectoryExplorerProp
           <div className="relative flex-1">
             <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
+              id="preset-search-query"
+              aria-label="Search biometric profiles by weight, sex, hormone, or formula"
               type="text"
               placeholder="Search by weight (e.g. 180 lb), sex, hormone, fasting, formula..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 pr-4 pl-9 text-xs text-slate-800 placeholder-slate-400 focus:border-teal-500 focus:bg-white focus:outline-hidden"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 pr-4 pl-9 text-xs text-slate-800 placeholder-slate-500 focus:border-teal-500 focus:bg-white focus:outline-hidden"
             />
           </div>
 
