@@ -23,5 +23,14 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
-  }
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "chrome >= 95",
+    "safari >= 15.4",
+    "firefox >= 95",
+    "edge >= 95",
+    "ios_saf >= 15.4",
+    "not dead"
+  ]
 }

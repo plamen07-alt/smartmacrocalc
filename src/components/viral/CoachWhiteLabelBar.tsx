@@ -141,6 +141,7 @@ export function CoachWhiteLabelBar() {
           <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
             <button
               type="button"
+              aria-label="Close modal"
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
             >

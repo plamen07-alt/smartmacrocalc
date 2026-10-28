@@ -10,3 +10,8 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}

@@ -83,12 +83,12 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - lazyOnload preserves mobile LCP & 100/100 Core Web Vitals */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-PC393FVH8K"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

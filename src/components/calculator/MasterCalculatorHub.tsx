@@ -181,13 +181,16 @@ export function MasterCalculatorHub({
     <div className="space-y-8">
       {/* Module Navigation Tabs ("Swiss Army Knife" Hub Architecture) */}
       <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-xs">
-        <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
+        <div role="tablist" aria-label="Clinical calculator modules" className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-controls={`panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-start justify-between rounded-xl p-3 text-left transition ${
                   isActive
@@ -228,9 +231,11 @@ export function MasterCalculatorHub({
                 </p>
               </div>
 
-              <div className="inline-flex rounded-lg border border-slate-200 bg-slate-100 p-0.5">
+              <div role="radiogroup" aria-label="Unit system" className="inline-flex rounded-lg border border-slate-200 bg-slate-100 p-0.5">
                 <button
                   type="button"
+                  role="radio"
+                  aria-checked={bio.unitSystem === 'imperial'}
                   onClick={() => updateBio({ unitSystem: 'imperial' })}
                   className={`rounded-md px-2.5 py-1 text-xs font-bold transition ${
                     bio.unitSystem === 'imperial'
@@ -242,6 +247,8 @@ export function MasterCalculatorHub({
                 </button>
                 <button
                   type="button"
+                  role="radio"
+                  aria-checked={bio.unitSystem === 'metric'}
                   onClick={() => updateBio({ unitSystem: 'metric' })}
                   className={`rounded-md px-2.5 py-1 text-xs font-bold transition ${
                     bio.unitSystem === 'metric'
@@ -257,10 +264,12 @@ export function MasterCalculatorHub({
             {/* Biological Sex & Age */}
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700">Biological Sex</label>
-                <div className="mt-1.5 grid grid-cols-2 gap-1.5">
+                <label id="sex-label" className="block text-xs font-semibold text-slate-700">Biological Sex</label>
+                <div role="radiogroup" aria-labelledby="sex-label" className="mt-1.5 grid grid-cols-2 gap-1.5">
                   <button
                     type="button"
+                    role="radio"
+                    aria-checked={bio.sex === 'male'}
                     onClick={() => updateBio({ sex: 'male' })}
                     className={`rounded-lg border py-2 text-xs font-bold transition ${
                       bio.sex === 'male'
@@ -272,6 +281,8 @@ export function MasterCalculatorHub({
                   </button>
                   <button
                     type="button"
+                    role="radio"
+                    aria-checked={bio.sex === 'female'}
                     onClick={() => updateBio({ sex: 'female' })}
                     className={`rounded-lg border py-2 text-xs font-bold transition ${
                       bio.sex === 'female'

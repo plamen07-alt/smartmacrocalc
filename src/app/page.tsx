@@ -106,7 +106,7 @@ export default function HomePage() {
       {/* PROGRAMMATIC SEO (pSEO) PRESET MATRIX */}
       <section
         id="programmatic-presets"
-        className="mt-14 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8"
+        className="content-auto mt-14 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8"
       >
         <div className="flex flex-col justify-between gap-2 border-b border-slate-100 pb-5 sm:flex-row sm:items-center">
           <div>
@@ -155,7 +155,7 @@ export default function HomePage() {
       {/* DEEP SCIENTIFIC METHODOLOGY, PUBMED CITATIONS & REFERENCE TABLES (1,000+ Words for AdSense E-E-A-T) */}
       <section
         id="scientific-methodology"
-        className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-10"
+        className="content-auto mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-10"
       >
         <div className="border-b border-slate-200 pb-6">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800">
