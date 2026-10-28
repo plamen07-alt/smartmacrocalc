@@ -237,7 +237,7 @@ export default function HomePage() {
                 Verified PubMed (NCBI) Primary Literature
               </h4>
               <ul className="mt-3 space-y-3 text-xs text-slate-700">
-                <li className="border-b border-teal-200/60 pb-2.5">
+                <li className="border-b border-teal-200/60 pb-3.5 pt-1.5">
                   <div className="font-bold text-slate-900">
                     Mifflin MD, St Jeor ST, et al. (1990)
                   </div>
@@ -248,12 +248,12 @@ export default function HomePage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/2305711/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 font-mono text-[11px] font-bold text-teal-700 hover:underline"
+                    className="mt-2 inline-flex min-h-[38px] items-center gap-1.5 rounded-lg bg-teal-100/70 px-3 py-1.5 font-mono text-xs font-bold text-teal-900 transition hover:bg-teal-200"
                   >
-                    PMID: 2305711 <ExternalLink className="h-3 w-3" />
+                    PMID: 2305711 <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </li>
-                <li className="border-b border-teal-200/60 pb-2.5">
+                <li className="border-b border-teal-200/60 pb-3.5 pt-1.5">
                   <div className="font-bold text-slate-900">
                     Longland TM, Phillips SM, et al. (2016)
                   </div>
@@ -264,12 +264,12 @@ export default function HomePage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/26817506/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 font-mono text-[11px] font-bold text-teal-700 hover:underline"
+                    className="mt-2 inline-flex min-h-[38px] items-center gap-1.5 rounded-lg bg-teal-100/70 px-3 py-1.5 font-mono text-xs font-bold text-teal-900 transition hover:bg-teal-200"
                   >
-                    PMID: 26817506 <ExternalLink className="h-3 w-3" />
+                    PMID: 26817506 <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </li>
-                <li className="border-b border-teal-200/60 pb-2.5">
+                <li className="border-b border-teal-200/60 pb-3.5 pt-1.5">
                   <div className="font-bold text-slate-900">
                     Wilding JPH, et al. — STEP 1 Trial (2021)
                   </div>
@@ -280,12 +280,12 @@ export default function HomePage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/33567185/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 font-mono text-[11px] font-bold text-teal-700 hover:underline"
+                    className="mt-2 inline-flex min-h-[38px] items-center gap-1.5 rounded-lg bg-teal-100/70 px-3 py-1.5 font-mono text-xs font-bold text-teal-900 transition hover:bg-teal-200"
                   >
-                    PMID: 33567185 <ExternalLink className="h-3 w-3" />
+                    PMID: 33567185 <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </li>
-                <li>
+                <li className="pt-1.5">
                   <div className="font-bold text-slate-900">
                     Cunningham JJ. (1980)
                   </div>
@@ -296,9 +296,9 @@ export default function HomePage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/6741850/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 font-mono text-[11px] font-bold text-teal-700 hover:underline"
+                    className="mt-2 inline-flex min-h-[38px] items-center gap-1.5 rounded-lg bg-teal-100/70 px-3 py-1.5 font-mono text-xs font-bold text-teal-900 transition hover:bg-teal-200"
                   >
-                    PMID: 6741850 <ExternalLink className="h-3 w-3" />
+                    PMID: 6741850 <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </li>
               </ul>
@@ -411,7 +411,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
+        <div className="mt-4 grid gap-6 md:grid-cols-3">
           {SCIENTIFIC_ARTICLES.slice(0, 6).map((art) => (
             <Link
               key={art.slug}

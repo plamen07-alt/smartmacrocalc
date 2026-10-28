@@ -190,7 +190,6 @@ export function MasterCalculatorHub({
                 type="button"
                 role="tab"
                 aria-selected={isActive}
-                aria-controls={`panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-start justify-between rounded-xl p-3 text-left transition ${
                   isActive
@@ -1103,7 +1102,7 @@ export function MasterCalculatorHub({
                 {/* Training Day Card */}
                 <div className="rounded-xl border-2 border-emerald-500/80 bg-emerald-50/30 p-5">
                   <div className="flex items-center justify-between">
-                    <span className="rounded-md bg-emerald-600 px-2.5 py-1 text-xs font-bold text-white uppercase">
+                    <span className="rounded-md bg-emerald-700 px-2.5 py-1 text-xs font-bold text-white uppercase">
                       Training Days ({bio.trainingDaysPerWeek} days/wk)
                     </span>
                     <span className="font-mono text-xs font-bold text-emerald-800">
@@ -1129,7 +1128,7 @@ export function MasterCalculatorHub({
                     </div>
                     <div className="rounded-lg bg-white p-2.5 shadow-2xs ring-1 ring-slate-200">
                       <div className="text-[11px] font-semibold text-slate-500">Carbs</div>
-                      <div className="font-mono text-lg font-extrabold text-amber-600">
+                      <div className="font-mono text-lg font-extrabold text-amber-800">
                         {report.trainingDayMacros.carbsGrams}g
                       </div>
                       <div className="text-[10px] font-medium text-slate-600">
@@ -1177,7 +1176,7 @@ export function MasterCalculatorHub({
                     </div>
                     <div className="rounded-lg bg-white p-2.5 shadow-2xs ring-1 ring-slate-200">
                       <div className="text-[11px] font-semibold text-slate-500">Carbs</div>
-                      <div className="font-mono text-lg font-extrabold text-amber-600">
+                      <div className="font-mono text-lg font-extrabold text-amber-800">
                         {report.restDayMacros.carbsGrams}g
                       </div>
                       <div className="text-[10px] font-medium text-slate-600">
@@ -1655,7 +1654,7 @@ export function MasterCalculatorHub({
                     </div>
                     <div className="rounded-lg bg-white p-2.5 shadow-2xs ring-1 ring-slate-200">
                       <div className="text-[11px] font-semibold text-slate-500">Carbs</div>
-                      <div className="font-mono text-lg font-extrabold text-amber-600">
+                      <div className="font-mono text-lg font-extrabold text-amber-800">
                         {report.perimenopauseProtocol.trainingDayMacros.carbsGrams}g
                       </div>
                       <div className="text-[10px] font-medium text-slate-600">
@@ -1702,7 +1701,7 @@ export function MasterCalculatorHub({
                     </div>
                     <div className="rounded-lg bg-white p-2.5 shadow-2xs ring-1 ring-slate-200">
                       <div className="text-[11px] font-semibold text-slate-500">Carbs</div>
-                      <div className="font-mono text-lg font-extrabold text-amber-600">
+                      <div className="font-mono text-lg font-extrabold text-amber-800">
                         {report.perimenopauseProtocol.restDayMacros.carbsGrams}g
                       </div>
                       <div className="text-[10px] font-medium text-slate-600">

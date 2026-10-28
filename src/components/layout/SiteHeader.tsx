@@ -15,9 +15,9 @@ export function SiteHeader() {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-lg font-extrabold tracking-tight text-slate-900">
-                Smart<span className="text-teal-600">MacroCalc</span>.com
+                Smart<span className="text-teal-800">MacroCalc</span>.com
               </span>
-              <span className="hidden rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700 ring-1 ring-teal-600/20 sm:inline-block">
+              <span className="hidden rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-800 ring-1 ring-teal-600/30 sm:inline-block">
                 EVIDENCE-BASED
               </span>
             </div>

@@ -211,7 +211,7 @@ export default async function PresetSeoPage({
         className="mb-8 rounded-2xl border-2 border-emerald-500/40 bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/60 p-6 shadow-xs"
       >
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-xs">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-700 px-3 py-1 text-xs font-bold text-white shadow-xs">
             <CheckCircle2 className="h-3.5 w-3.5" />
             Direct Clinical Answer
           </span>
