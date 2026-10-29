@@ -10,11 +10,15 @@ declare global {
   }
 }
 
-const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || '';
+const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || 'ca-pub-4352066394446213';
 const IS_LIVE_ADSENSE =
   Boolean(ADSENSE_CLIENT_ID) &&
   ADSENSE_CLIENT_ID.startsWith('ca-pub-') &&
   !ADSENSE_CLIENT_ID.includes('0000000000');
+
+const HAS_SLOT_DYNAMIC = Boolean(process.env.NEXT_PUBLIC_ADSENSE_SLOT_DYNAMIC_RESULT);
+const HAS_SLOT_STICKY = Boolean(process.env.NEXT_PUBLIC_ADSENSE_SLOT_STICKY_FOOTER);
+const HAS_SLOT_IN_ARTICLE = Boolean(process.env.NEXT_PUBLIC_ADSENSE_SLOT_IN_ARTICLE);
 
 interface GoogleAdUnitProps {
   slotId: string;
@@ -67,9 +71,9 @@ interface DynamicResultAdSlotProps {
  * Remains completely clean (no placeholder/debug boxes) during Google AdSense site review.
  */
 export function DynamicResultAdSlot({ activeTab: _activeTab }: DynamicResultAdSlotProps) {
-  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_DYNAMIC_RESULT || '1111111111';
+  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_DYNAMIC_RESULT;
 
-  if (!IS_LIVE_ADSENSE) {
+  if (!IS_LIVE_ADSENSE || !HAS_SLOT_DYNAMIC || !slotId) {
     return null;
   }
 
@@ -86,9 +90,9 @@ export function DynamicResultAdSlot({ activeTab: _activeTab }: DynamicResultAdSl
  */
 export function StickyFooterAdSlot({ showAdPreview: _showAdPreview }: { showAdPreview?: boolean }) {
   const [dismissed, setDismissed] = useState(false);
-  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_STICKY_FOOTER || '2222222222';
+  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_STICKY_FOOTER;
 
-  if (dismissed || !IS_LIVE_ADSENSE) return null;
+  if (dismissed || !IS_LIVE_ADSENSE || !HAS_SLOT_STICKY || !slotId) return null;
 
   return (
     <div className="fixed right-0 bottom-0 left-0 z-30 border-t border-slate-200 bg-white/95 px-4 py-2 shadow-lg backdrop-blur-md">
@@ -169,9 +173,9 @@ export function NativeAffiliateCallout({
  * Renders only when live Google AdSense is active.
  */
 export function InArticleAdSenseSlot({ label: _label }: { label?: string }) {
-  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_IN_ARTICLE || '3333333333';
+  const slotId = process.env.NEXT_PUBLIC_ADSENSE_SLOT_IN_ARTICLE;
 
-  if (!IS_LIVE_ADSENSE) {
+  if (!IS_LIVE_ADSENSE || !HAS_SLOT_IN_ARTICLE || !slotId) {
     return null;
   }
 
