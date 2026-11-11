@@ -12,6 +12,7 @@ import {
   BookOpen,
 } from 'lucide-react';
 import { SCIENTIFIC_ARTICLES, getArticleBySlug } from '@/lib/articles';
+import { formatSeoTitle } from '@/lib/site';
 import { InArticleAdSenseSlot } from '@/components/monetization/StrategicAdSlots';
 
 export function generateStaticParams() {
@@ -26,17 +27,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) {
-    return { title: 'Guide Not Found | SmartMacroCalc.com' };
+    return { title: 'Guide Not Found | SmartMacroCalc' };
   }
+  const seoTitle = formatSeoTitle(article.title);
   const canonicalUrl = `https://www.smartmacrocalc.com/guides/${slug}`;
+  const currentIdx = SCIENTIFIC_ARTICLES.findIndex((a) => a.slug === slug);
+  const relatedGuides = [1, 2, 3, 4].map(
+    (offset) => SCIENTIFIC_ARTICLES[(currentIdx + offset) % SCIENTIFIC_ARTICLES.length]
+  );
   return {
-    title: `${article.title} | SmartMacroCalc.com`,
+    title: seoTitle,
     description: article.excerpt,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${article.title} | SmartMacroCalc.com`,
+      title: seoTitle,
       description: article.excerpt,
       url: canonicalUrl,
       type: 'article',
@@ -48,13 +54,13 @@ export async function generateMetadata({
           url: '/opengraph-image',
           width: 1200,
           height: 630,
-          alt: `${article.title} | SmartMacroCalc.com`,
+          alt: seoTitle,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article.title} | SmartMacroCalc.com`,
+      title: seoTitle,
       description: article.excerpt,
       images: ['/opengraph-image'],
     },
@@ -73,6 +79,10 @@ export default async function GuideArticlePage({
   }
 
   const canonicalUrl = `https://www.smartmacrocalc.com/guides/${slug}`;
+  const currentIdx = SCIENTIFIC_ARTICLES.findIndex((a) => a.slug === slug);
+  const relatedGuides = [1, 2, 3, 4].map(
+    (offset) => SCIENTIFIC_ARTICLES[(currentIdx + offset) % SCIENTIFIC_ARTICLES.length]
+  );
 
   // Structured FAQ Data
   const articleFaqs = (article as any).faq ||
@@ -388,6 +398,47 @@ export default async function GuideArticlePage({
               );
             })}
           </ul>
+        </div>
+
+        {/* Clinical Application & Monitoring Checklist */}
+        <div className="mt-10 border-t border-slate-100 pt-6">
+          <h3 className="text-lg font-bold text-slate-900">
+            Translating Research Into Daily Nutritional Execution
+          </h3>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
+            <p>
+              Applying peer-reviewed bioenergetics effectively requires pairing accurate predictive baseline equations with longitudinal self-monitoring. Begin by entering your exact biometric measurements (body weight, height, age, estimated body fat percentage, and weekly resistance training frequency) into the SmartMacroCalc calculator engine so your daily targets reflect Lean Body Mass rather than generic population averages.
+            </p>
+            <p>
+              Evaluate progress using 7-day rolling morning weight averages rather than isolated daily weigh-ins. Acute shifts in muscle glycogen, dietary sodium, hydration balance, and post-exercise inflammation routinely shift total scale mass by 1% to 2% within 24 hours without indicating changes in adipose tissue or myofibrillar protein accretion.
+            </p>
+            <p>
+              When coordinating macronutrient targets alongside prescription metabolic therapies (including GLP-1 or dual GIP/GLP-1 receptor agonists), endocrine transitions, or competitive athletic preparation, prioritize meeting your non-negotiable daily protein floor and hydration electrolytes first before adjusting discretionary carbohydrate and dietary fat intake.
+            </p>
+            <p>
+              Consistent execution across 8 to 12 weeks depends on combining progressive mechanical tension from resistance training (2 to 4 structured compound lifting sessions per week) with objective dietary adherence. Rather than reacting to single-day appetite variations or social meals, evaluate weekly average caloric intake, total daily protein grams, daily step consistency (7,000–10,000 steps for non-exercise activity preservation), and sleep duration (7–9 hours nightly). If fatigue accumulates or training performance stalls for more than two consecutive weeks, recalculate your maintenance baseline using the interactive Katch-McArdle or Cunningham modules and transition smoothly through a structured maintenance or reverse-dieting phase before initiating further caloric reductions.
+            </p>
+          </div>
+        </div>
+
+        {/* Related Peer-Reviewed Research Guides (Full Cross-Linking) */}
+        <div className="mt-8 border-t border-slate-100 pt-6">
+          <h3 className="text-base font-bold text-slate-900">
+            Related Peer-Reviewed Clinical Guides
+          </h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            {relatedGuides.map((rel) => (
+              <Link
+                key={rel.slug}
+                href={`/guides/${rel.slug}`}
+                className="rounded-xl border border-slate-200 bg-slate-50/70 p-4 text-xs transition hover:border-teal-400 hover:bg-white"
+              >
+                <span className="font-bold text-teal-800">{rel.category}</span>
+                <p className="mt-1 font-bold text-slate-900">{rel.title}</p>
+                <p className="mt-1 text-slate-600">{rel.excerpt}</p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 flex items-center justify-between rounded-xl bg-slate-900 p-5 text-white">

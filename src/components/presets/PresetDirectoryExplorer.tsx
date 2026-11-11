@@ -17,10 +17,26 @@ import {
   Layers,
   ChevronRight,
 } from 'lucide-react';
-import { SeoPreset, PresetCategory } from '@/lib/presets';
+import type { PresetCategory } from '@/lib/presets';
+import type { Sex, BmrFormula } from '@/lib/formulas';
+
+export interface PresetDirectoryItem {
+  slug: string;
+  category: PresetCategory;
+  h1: string;
+  badge: string;
+  directClinicalAnswer: string;
+  biometrics: {
+    sex: Sex;
+    age: number;
+    weightKg: number;
+    bodyFatPct: number;
+    formula: BmrFormula;
+  };
+}
 
 interface PresetDirectoryExplorerProps {
-  presets: SeoPreset[];
+  presets: PresetDirectoryItem[];
 }
 
 const CATEGORIES: Array<{
@@ -69,12 +85,11 @@ export function PresetDirectoryExplorer({ presets }: PresetDirectoryExplorerProp
       // 4. Search query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
-        const matchTitle = preset.title.toLowerCase().includes(query);
         const matchH1 = preset.h1.toLowerCase().includes(query);
         const matchBadge = preset.badge.toLowerCase().includes(query);
         const matchSlug = preset.slug.toLowerCase().includes(query);
         const matchAnswer = preset.directClinicalAnswer.toLowerCase().includes(query);
-        if (!matchTitle && !matchH1 && !matchBadge && !matchSlug && !matchAnswer) {
+        if (!matchH1 && !matchBadge && !matchSlug && !matchAnswer) {
           return false;
         }
       }

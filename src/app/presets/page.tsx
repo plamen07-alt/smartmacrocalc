@@ -3,17 +3,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Layers, ArrowLeft, ShieldCheck, Sparkles } from 'lucide-react';
 import { SEO_PRESETS } from '@/lib/presets';
-import { PresetDirectoryExplorer } from '@/components/presets/PresetDirectoryExplorer';
+import { PresetDirectoryExplorer, type PresetDirectoryItem } from '@/components/presets/PresetDirectoryExplorer';
 
 export const metadata: Metadata = {
-  title: 'Biometric Macro & Calorie Cycling Preset Directory (64 Clinical Profiles) | SmartMacroCalc.com',
+  title: 'Biometric Macro & Calorie Cycling Presets (64) | SmartMacroCalc',
   description:
     'Browse 64 pre-calculated clinical macro presets spanning 120 lb to 240 lb. Precision calorie cycling (+5%/-20%), GLP-1 protein floors, perimenopause, fasting, and electrolyte protocols.',
   alternates: {
     canonical: 'https://www.smartmacrocalc.com/presets',
   },
   openGraph: {
-    title: 'Biometric Macro & Calorie Cycling Preset Directory | SmartMacroCalc.com',
+    title: 'Biometric Macro & Calorie Cycling Presets (64) | SmartMacroCalc',
     description:
       'Browse 64 pre-calculated clinical macro presets spanning 120 lb to 240 lb. Precision calorie cycling, GLP-1 protein floors, perimenopause, fasting, and electrolyte protocols.',
     url: 'https://www.smartmacrocalc.com/presets',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Biometric Macro & Calorie Cycling Preset Directory | SmartMacroCalc.com',
+    title: 'Biometric Macro & Calorie Cycling Presets (64) | SmartMacroCalc',
     description:
       'Browse 64 pre-calculated clinical macro presets spanning 120 lb to 240 lb. Precision calorie cycling and GLP-1 protein floors.',
   },
@@ -61,6 +61,21 @@ export default function PresetsDirectoryPage() {
       url: `https://www.smartmacrocalc.com/presets/${p.slug}`,
     })),
   };
+
+  const directoryItems: PresetDirectoryItem[] = SEO_PRESETS.map((p) => ({
+    slug: p.slug,
+    category: p.category,
+    h1: p.h1,
+    badge: p.badge,
+    directClinicalAnswer: p.directClinicalAnswer,
+    biometrics: {
+      sex: p.biometrics.sex ?? 'female',
+      age: p.biometrics.age ?? 32,
+      weightKg: p.biometrics.weightKg ?? 70,
+      bodyFatPct: p.biometrics.bodyFatPct ?? 20,
+      formula: p.biometrics.formula ?? 'katch',
+    },
+  }));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -106,7 +121,7 @@ export default function PresetsDirectoryPage() {
       </div>
 
       {/* Interactive Explorer with Category Tabs, Search & Preset Cards */}
-      <PresetDirectoryExplorer presets={SEO_PRESETS} />
+      <PresetDirectoryExplorer presets={directoryItems} />
     </div>
   );
 }

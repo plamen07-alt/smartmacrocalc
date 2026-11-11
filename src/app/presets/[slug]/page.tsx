@@ -13,6 +13,8 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { SEO_PRESETS, getPresetBySlug } from '@/lib/presets';
+import { SCIENTIFIC_ARTICLES } from '@/lib/articles';
+import { formatSeoTitle } from '@/lib/site';
 import { MasterCalculatorHub } from '@/components/calculator/MasterCalculatorHub';
 import { InArticleAdSenseSlot } from '@/components/monetization/StrategicAdSlots';
 
@@ -28,17 +30,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const preset = getPresetBySlug(slug);
   if (!preset) {
-    return { title: 'Preset Not Found | SmartMacroCalc.com' };
+    return { title: 'Preset Not Found | SmartMacroCalc' };
   }
+  const seoTitle = formatSeoTitle(preset.h1);
   const canonicalUrl = `https://www.smartmacrocalc.com/presets/${slug}`;
   return {
-    title: `${preset.title} | SmartMacroCalc.com`,
+    title: seoTitle,
     description: preset.metaDescription,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${preset.title} | SmartMacroCalc.com`,
+      title: seoTitle,
       description: preset.metaDescription,
       url: canonicalUrl,
       type: 'article',
@@ -49,13 +52,13 @@ export async function generateMetadata({
           url: '/opengraph-image',
           width: 1200,
           height: 630,
-          alt: `${preset.title} | SmartMacroCalc.com`,
+          alt: seoTitle,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${preset.title} | SmartMacroCalc.com`,
+      title: seoTitle,
       description: preset.metaDescription,
       images: ['/opengraph-image'],
     },
@@ -131,19 +134,6 @@ export default async function PresetSeoPage({
     citation: preset.pmidCitations.map((c) => c.url),
   };
 
-  const softwareAppSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: `SmartMacroCalc ${preset.h1} Calculator`,
-    applicationCategory: 'HealthApplication',
-    operatingSystem: 'All',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-  };
-
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -151,6 +141,21 @@ export default async function PresetSeoPage({
     url: 'https://www.smartmacrocalc.com',
     logo: 'https://www.smartmacrocalc.com/icon.svg',
   };
+
+  const relatedPresets = SEO_PRESETS.filter(
+    (p) => p.category === preset.category && p.slug !== preset.slug
+  ).slice(0, 3);
+  const presetIdx = SEO_PRESETS.findIndex((p) => p.slug === preset.slug);
+  const relatedGuides = [
+    SCIENTIFIC_ARTICLES[presetIdx % SCIENTIFIC_ARTICLES.length],
+    SCIENTIFIC_ARTICLES[(presetIdx + 5) % SCIENTIFIC_ARTICLES.length],
+  ];
+  const weightKg = preset.biometrics.weightKg ?? 75;
+  const bodyFatPct = preset.biometrics.bodyFatPct ?? 20;
+  const sexLabel = preset.biometrics.sex ?? 'adult';
+  const weightLbs = Math.round(weightKg * 2.20462);
+  const leanMassKg = Number((weightKg * (1 - bodyFatPct / 100)).toFixed(1));
+  const leanMassLbs = Number((leanMassKg * 2.20462).toFixed(1));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -166,10 +171,6 @@ export default async function PresetSeoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalWebPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
       />
       <script
         type="application/ld+json"
@@ -342,6 +343,66 @@ export default async function PresetSeoPage({
                 <h4 className="text-sm font-bold text-slate-900">{q.question}</h4>
                 <p className="mt-1 text-xs leading-relaxed text-slate-600">{q.answer}</p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Protocol Calibration & Daily Implementation Framework */}
+        <div className="mt-8 border-t border-slate-100 pt-6">
+          <h3 className="text-lg font-bold text-slate-900">
+            Biometric Calibration &amp; Weekly Tracking Guidelines
+          </h3>
+          <div className="mt-3 space-y-3 text-xs leading-relaxed text-slate-700 sm:text-sm">
+            <p>
+              This clinical preset is pre-calibrated for a{' '}
+              <strong>
+                {weightLbs} lb ({weightKg} kg) {sexLabel}
+              </strong>{' '}
+              profile at <strong>{bodyFatPct}% estimated body fat</strong>, yielding an estimated Lean Body Mass of{' '}
+              <strong>
+                {leanMassLbs} lb ({leanMassKg} kg LBM)
+              </strong>
+              . Anchoring daily protein targets to Lean Body Mass rather than gross scale weight prevents systematic under-dosing of skeletal muscle tissue or excessive protein inflation in individuals with higher adiposity.
+            </p>
+            <p>
+              When executing this protocol over a 4- to 12-week mesocycle, record fasted morning scale weights at least four mornings per week and evaluate the rolling 7-day average rather than single-day hydration fluctuations. Acute shifts in glycogen storage, dietary sodium intake, gastrointestinal transit time, or training-induced muscle inflammation routinely shift scale weight by 1% to 2% within 24 hours without reflecting true adipose tissue gain or loss.
+            </p>
+            <p>
+              Adjust your active input parameters directly in the interactive calculator above whenever your rolling 14-day weight trend diverges from your target trajectory by more than 0.25% of body weight per week, or whenever your resistance training frequency, step count, or medication regimen changes. All calculations execute locally in your browser so your biometric measurements remain completely private.
+            </p>
+            <p>
+              For optimal muscle protein synthesis and recovery, distribute your daily protein intake across 3 to 4 balanced feedings spaced roughly 3 to 5 hours apart, targeting 30g to 45g of complete, leucine-rich protein per meal. On higher-intensity resistance training days, position roughly 40% to 50% of your daily carbohydrates within the 2-hour pre-workout and post-workout window to fuel glycogen resynthesis while maintaining lower glycemic carbohydrate intake on sedentary recovery days. Pair caloric adjustments with consistent daily hydration (minimum 30–35 mL/kg fluid baseline), electrolyte replacement during heavy perspiration, and 7 to 9 hours of restorative sleep to prevent cortisol-mediated water retention and preserve resting energy expenditure throughout every mesocycle.
+            </p>
+          </div>
+        </div>
+
+        {/* Related Presets & Supporting Guides */}
+        <div className="mt-8 border-t border-slate-100 pt-6">
+          <h3 className="text-base font-bold text-slate-900">
+            Related Clinical Profiles &amp; Supporting Research Guides
+          </h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPresets.map((rp) => (
+              <Link
+                key={rp.slug}
+                href={`/presets/${rp.slug}`}
+                className="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5 text-xs transition hover:border-teal-400 hover:bg-white"
+              >
+                <span className="font-bold text-teal-800">{rp.badge}</span>
+                <p className="mt-1 font-semibold text-slate-900">{rp.h1}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {relatedGuides.map((rg) => (
+              <Link
+                key={rg.slug}
+                href={`/guides/${rg.slug}`}
+                className="rounded-xl border border-teal-200/80 bg-teal-50/40 p-3.5 text-xs transition hover:border-teal-500 hover:bg-white"
+              >
+                <span className="font-bold text-teal-800">Research Guide • {rg.category}</span>
+                <p className="mt-1 font-semibold text-slate-900">{rg.title}</p>
+              </Link>
             ))}
           </div>
         </div>

@@ -19,17 +19,29 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'SoftwareApplication',
-        name: 'SmartMacroCalc Body Recomposition & GLP-1 Macro Cycling Calculator',
-        applicationCategory: 'HealthApplication',
-        operatingSystem: 'Web',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-        },
+        '@type': 'WebSite',
+        '@id': 'https://www.smartmacrocalc.com/#website',
+        name: 'SmartMacroCalc.com',
+        url: 'https://www.smartmacrocalc.com',
         description:
           'Interactive clinical calculator for body recomposition calorie cycling (+5% training / -20% rest days), GLP-1 / Semaglutide lean muscle preservation, reverse dieting (+80 kcal/week), FFMI, and sweat electrolyte replacement.',
+      },
+      {
+        '@type': 'MedicalWebPage',
+        '@id': 'https://www.smartmacrocalc.com/#medicalwebpage',
+        name: 'Body Recomposition, GLP-1 Protein & Macro Cycling Lab',
+        url: 'https://www.smartmacrocalc.com',
+        aspect: 'DietaryGuidance',
+        author: {
+          '@type': 'Organization',
+          name: 'SmartMacroCalc Editorial Team',
+        },
+        reviewedBy: {
+          '@type': 'Organization',
+          name: 'SmartMacroCalc Editorial Team',
+        },
+        description:
+          'Client-side indirect calorimetry and macronutrient partitioning calculator powered by Mifflin-St Jeor, Katch-McArdle, and Cunningham equations.',
       },
       {
         '@type': 'FAQPage',
@@ -389,6 +401,18 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
+          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-xs leading-relaxed text-slate-700">
+            <h4 className="text-sm font-bold text-slate-900">
+              Clinical Calibration &amp; Weekly Progress Verification Protocol
+            </h4>
+            <p className="mt-2">
+              To achieve reliable body recomposition or sarcopenia-protected fat loss, always interpret scale changes using a 7-day rolling average of fasted morning weigh-ins measured immediately after waking and voiding. Acute 24-hour weight swings of 0.5 kg to 1.5 kg typically reflect intramuscular glycogen binding water (roughly 3g of water per gram of glycogen), sodium intake shifts, menstrual luteal fluid retention, or post-training inflammatory recovery rather than real adipose gain.
+            </p>
+            <p className="mt-2">
+              Use the bi-unit US Imperial (pounds, feet/inches) and Metric (kilograms, centimeters) toggles inside the hub to inspect your exact protein floor per meal, 16:8 circadian feeding schedule, creatinine saturation phase, and reverse-diet recovery slope. All calculations execute instantaneously on the client side with zero account creation, tracking cookies on biometric fields, or remote health-data storage.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -432,6 +456,33 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+
+        {/* Remaining Peer-Reviewed Guides Index (ensures full internal linking across all 12 research guides) */}
+        {SCIENTIFIC_ARTICLES.length > 6 && (
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 className="text-xs font-bold tracking-wider text-slate-700 uppercase">
+              Additional Peer-Reviewed Bioenergetics &amp; Micronutrient Studies
+            </h3>
+            <div className="mt-3 grid gap-4 md:grid-cols-3">
+              {SCIENTIFIC_ARTICLES.slice(6).map((art) => (
+                <Link
+                  key={art.slug}
+                  href={`/guides/${art.slug}`}
+                  className="group rounded-xl border border-slate-100 bg-slate-50/70 p-4 transition hover:border-teal-500 hover:bg-white"
+                >
+                  <div className="flex items-center justify-between text-[11px] font-semibold text-teal-700">
+                    <span>{art.category}</span>
+                    <span className="text-slate-500">{art.readTime}</span>
+                  </div>
+                  <h4 className="mt-1.5 text-sm font-bold text-slate-900 group-hover:text-teal-800">
+                    {art.title}
+                  </h4>
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-600">{art.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );

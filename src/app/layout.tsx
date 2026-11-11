@@ -7,7 +7,7 @@ import { SiteFooter } from '@/components/layout/SiteFooter';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.smartmacrocalc.com'),
   title:
-    'SmartMacroCalc.com | Body Recomposition, GLP-1 Protein & Macro Cycling Calculator',
+    'SmartMacroCalc | Body Recomposition, GLP-1 & Macro Calculator',
   description:
     'Clinical-grade Body Recomposition, Calorie Cycling (+5%/-20%), GLP-1 & Ozempic Muscle Preservation, Perimenopause, 16:8 Fasting Clock, Reverse Dieting (+80 kcal/wk), FFMI & Electrolyte Calculator.',
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'SmartMacroCalc.com | Body Recomposition, GLP-1 Protein & Macro Cycling Calculator',
+      'SmartMacroCalc | Body Recomposition, GLP-1 & Macro Calculator',
     description:
       'Calculate your exact Training Day (+5%) & Rest Day (-20%) macros, GLP-1 anti-sarcopenia protein floor, Perimenopause targets, 16:8 Fasting clock & 12-week body fat trajectory.',
     url: 'https://www.smartmacrocalc.com',
